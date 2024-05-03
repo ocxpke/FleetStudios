@@ -55,11 +55,18 @@ public class SelectUser extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		usuExe.setBounds(486, 275, 202, 40);
+		usuExe.setBounds(486, 275, 202, 40); 
 		contentPane.add(usuExe);
 		
 		JButton nuevoUsu = new JButton("Nuevo usuario");
 		nuevoUsu.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		nuevoUsu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose(); //para cerrar la ventana que este abierta(la actual)
+				Register joselette = new Register();
+				joselette.setVisible(true);
+			}
+		});
 		nuevoUsu.setBounds(486, 370, 202, 40);
 		contentPane.add(nuevoUsu);
 	}
