@@ -8,3 +8,6 @@ This is a project made for the Introduction to Software Engineering subject.
 
 ## Use case diagram
 ![image](https://github.com/ocxpke/FleetStudios/assets/82225137/eebf1190-c185-4609-ba07-e79bbef2449f)
+
+## Clases diagram
+![image](https://github.com/ocxpke/FleetStudios/assets/82225137/6645f70b-291d-4bbd-8bfe-03ce34202b71)
