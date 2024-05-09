@@ -1,4 +1,4 @@
-package fleetStudios;
+package com.packages.FleetStudios;
 
 import java.awt.EventQueue;
 
