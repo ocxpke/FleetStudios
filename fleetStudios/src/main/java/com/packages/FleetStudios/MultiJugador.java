@@ -82,49 +82,49 @@ public class MultiJugador extends JFrame {
 		lblNewLabel_2_4.setBounds(678, 173, 38, 31);
 		contentPane.add(lblNewLabel_2_4);
 		
-		JButton btnNewButton = new JButton("Tick");
-		btnNewButton.setBounds(282, 214, 62, 21);
-		contentPane.add(btnNewButton);
+		JButton Tick1 = new JButton("Tick");
+		Tick1.setBounds(282, 214, 62, 21);
+		contentPane.add(Tick1);
 		
-		JButton btnNewButton_1 = new JButton("Tick");
-		btnNewButton_1.setBounds(374, 214, 62, 21);
-		contentPane.add(btnNewButton_1);
+		JButton Tick2 = new JButton("Tick");
+		Tick2.setBounds(374, 214, 62, 21);
+		contentPane.add(Tick2);
 		
-		JButton btnNewButton_2 = new JButton("Tick");
-		btnNewButton_2.setBounds(464, 214, 62, 21);
-		contentPane.add(btnNewButton_2);
+		JButton Tick3 = new JButton("Tick");
+		Tick3.setBounds(464, 214, 62, 21);
+		contentPane.add(Tick3);
 		
-		JButton btnNewButton_3 = new JButton("Tick");
-		btnNewButton_3.setBounds(568, 214, 62, 21);
-		contentPane.add(btnNewButton_3);
+		JButton Tick4 = new JButton("Tick");
+		Tick4.setBounds(568, 214, 62, 21);
+		contentPane.add(Tick4);
 		
-		JButton btnNewButton_4 = new JButton("Tick");
-		btnNewButton_4.setBounds(664, 214, 62, 21);
-		contentPane.add(btnNewButton_4);
+		JButton Tick5 = new JButton("Tick");
+		Tick5.setBounds(664, 214, 62, 21);
+		contentPane.add(Tick5);
 		
-		JButton btnNewButton_5 = new JButton("COMIENZA");
-		btnNewButton_5.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_5.setBounds(338, 302, 188, 43);
-		btnNewButton_5.addActionListener(new ActionListener() {
+		JButton Comienza = new JButton("COMIENZA");
+		Comienza.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Comienza.setBounds(338, 302, 188, 43);
+		Comienza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Partida newFrame = new Partida();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton_5);
+		contentPane.add(Comienza);
 		
-		JButton btnNewButton_5_1 = new JButton("ATRÁS");
-		btnNewButton_5_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_5_1.setBounds(574, 302, 188, 43);
-		btnNewButton_5_1.addActionListener(new ActionListener() {
+		JButton Atras = new JButton("ATRÁS");
+		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Atras.setBounds(574, 302, 188, 43);
+		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton_5_1);
+		contentPane.add(Atras);
 	}
 
 }

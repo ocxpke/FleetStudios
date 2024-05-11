@@ -19,8 +19,8 @@ public class IniciarSesion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField txt1;
-	private JTextField txt2;
+	private JTextField textContrasena;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -52,29 +52,25 @@ public class IniciarSesion extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel escrito0 = new JLabel("Tu Cuenta");
+		escrito0.setHorizontalAlignment(SwingConstants.CENTER);
 		escrito0.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		escrito0.setBounds(403, 112, 119, 29);
+		escrito0.setBounds(433, 116, 240, 29);
 		contentPane.add(escrito0);
 		
 		JLabel escrito1 = new JLabel("Correo Electrónico");
 		escrito1.setFont(new Font("Courgette", Font.PLAIN, 15));
-		escrito1.setBounds(293, 169, 138, 18);
+		escrito1.setBounds(369, 197, 138, 18);
 		contentPane.add(escrito1);
 		
 		JLabel escrito2 = new JLabel("Contraseña");
 		escrito2.setFont(new Font("Courgette", Font.PLAIN, 15));
-		escrito2.setBounds(293, 226, 138, 18);
+		escrito2.setBounds(369, 271, 138, 18);
 		contentPane.add(escrito2);
 		
-		txt1 = new JTextField();
-		txt1.setBounds(303, 197, 254, 19);
-		contentPane.add(txt1);
-		txt1.setColumns(10);
-		
-		txt2 = new JTextField();
-		txt2.setColumns(10);
-		txt2.setBounds(303, 254, 254, 19);
-		contentPane.add(txt2);
+		textContrasena = new JTextField();
+		textContrasena.setColumns(10);
+		textContrasena.setBounds(369, 215, 360, 25);
+		contentPane.add(textContrasena);
 		
 		JButton Continuar = new JButton("Continuar");
 		Continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
@@ -85,7 +81,7 @@ public class IniciarSesion extends JFrame {
 				dispose();
 			}
 		});
-		Continuar.setBounds(361, 340, 185, 42);
+		Continuar.setBounds(463, 409, 185, 40);
 		contentPane.add(Continuar);
 		
 		JButton OlvidarContraseña = new JButton("¿Has olvidado tu contraseña?");
@@ -96,23 +92,28 @@ public class IniciarSesion extends JFrame {
 				dispose();
 			}
 		});
-		OlvidarContraseña.setBounds(403, 283, 237, 21);
+		OlvidarContraseña.setBounds(463, 376, 185, 20);
 		contentPane.add(OlvidarContraseña);
 		
 		JLabel lblNewLabel = new JLabel("¿No tienes cuenta registrada?");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(322, 403, 224, 13);
+		lblNewLabel.setBounds(433, 472, 240, 13);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("Registrate");
-		btnNewButton.setBounds(384, 426, 103, 21);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton Registrate = new JButton("Registrate");
+		Registrate.setBounds(502, 497, 110, 25);
+		Registrate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CrearCuenta newFrame = new CrearCuenta();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton);
+		contentPane.add(Registrate);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(369, 289, 360, 25);
+		contentPane.add(textField);
 	}
 }

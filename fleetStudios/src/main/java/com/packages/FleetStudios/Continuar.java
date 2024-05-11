@@ -46,57 +46,61 @@ public class Continuar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Un Jugador");
-		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton.setBounds(354, 205, 435, 43);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton UnJugador = new JButton("Un Jugador");
+		UnJugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		UnJugador.setBounds(354, 205, 435, 45);
+		UnJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UnJugador newFrame = new UnJugador();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton);
+		contentPane.add(UnJugador);
 		
-		JButton btnMultijugador = new JButton("Multijugador");
-		btnMultijugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnMultijugador.setBounds(354, 274, 435, 43);
-		btnMultijugador.addActionListener(new ActionListener() {
+		JButton Multijugador = new JButton("Multijugador");
+		Multijugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Multijugador.setBounds(354, 274, 435, 45);
+		Multijugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultiJugador newFrame = new MultiJugador();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnMultijugador);
+		contentPane.add(Multijugador);
 		
-		JButton btnTorneo = new JButton("Torneo");
-		btnTorneo.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnTorneo.setBounds(354, 346, 435, 43);
-		contentPane.add(btnTorneo);
+		JButton Torneo = new JButton("Tienda");
+		Torneo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		Torneo.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Torneo.setBounds(354, 346, 435, 45);
+		contentPane.add(Torneo);
 		
-		JButton btnNewButton_1 = new JButton("Opciones");
-		btnNewButton_1.addActionListener(new ActionListener() {
+		JButton Opciones = new JButton("Opciones");
+		Opciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Opciones newFrame = new Opciones();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		btnNewButton_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(311, 426, 227, 37);
-		contentPane.add(btnNewButton_1);
+		Opciones.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Opciones.setBounds(311, 426, 230, 40);
+		contentPane.add(Opciones);
 		
-		JButton btnNewButton_1_1 = new JButton("Cerrar Sink&Win");
-		btnNewButton_1_1.addActionListener(new ActionListener() {
+		JButton Cerrar = new JButton("Cerrar Sink&Win");
+		Cerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Primera_Capa newFrame = new Primera_Capa();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		btnNewButton_1_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1_1.setBounds(621, 426, 227, 37);
-		contentPane.add(btnNewButton_1_1);
+		Cerrar.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Cerrar.setBounds(621, 426, 230, 40);
+		contentPane.add(Cerrar);
 	}
 }
