@@ -46,9 +46,9 @@ public class Primera_Capa extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		JButton InicioSesion = new JButton("Iniciar Sesión");
+		InicioSesion.setBounds(447, 237, 190, 65);
 		InicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		InicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -57,10 +57,11 @@ public class Primera_Capa extends JFrame {
 				dispose();
 			}
 		});
-		InicioSesion.setBounds(469, 263, 188, 64);
+		contentPane.setLayout(null);
 		contentPane.add(InicioSesion);
 		
 		JButton CreaUnaCuenta = new JButton("Crea tu Cuenta");
+		CreaUnaCuenta.setBounds(447, 345, 190, 65);
 		CreaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		CreaUnaCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -69,7 +70,6 @@ public class Primera_Capa extends JFrame {
 				dispose();
 			}
 		});
-		CreaUnaCuenta.setBounds(469, 368, 188, 64);
 		contentPane.add(CreaUnaCuenta);
 			
 	}

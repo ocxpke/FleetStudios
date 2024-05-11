@@ -11,12 +11,13 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class OlvidarContraseña extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField UsuarioEmail;
 
 	/**
 	 * Launch the application.
@@ -46,32 +47,33 @@ public class OlvidarContraseña extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Continuar");
-		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton.setBounds(394, 337, 177, 37);
-		contentPane.add(btnNewButton);
+		JButton Continuar = new JButton("Continuar");
+		Continuar.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Continuar.setBounds(329, 359, 180, 40);
+		contentPane.add(Continuar);
 		
-		textField = new JTextField();
-		textField.setBounds(412, 274, 388, 31);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		UsuarioEmail = new JTextField();
+		UsuarioEmail.setBounds(329, 281, 425, 35);
+		contentPane.add(UsuarioEmail);
+		UsuarioEmail.setColumns(10);
 		
 		JLabel lblNewLabel = new JLabel("Usuario o Correo Electrónico");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel.setBounds(412, 233, 376, 31);
+		lblNewLabel.setBounds(329, 229, 425, 31);
 		contentPane.add(lblNewLabel);
 		
-		JButton btnAtrs = new JButton("Atrás");
-		btnAtrs.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnAtrs.setBounds(682, 337, 177, 37);
-		btnAtrs.addActionListener(new ActionListener() {
+		JButton Atras = new JButton("Atrás");
+		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Atras.setBounds(577, 359, 180, 40);
+		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnAtrs);
+		contentPane.add(Atras);
 	}
 
 }

@@ -12,15 +12,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.SwingConstants;
 
 public class CrearCuenta extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField txt1;
-	private JTextField txt2;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField Nick;
+	private JTextField CorreoElectronico;
+	private JTextField RepCorreoElectronico;
+	private JTextField Contrasena;
+	private JTextField RepContrasena;
 
 	/**
 	 * Launch the application.
@@ -46,95 +47,90 @@ public class CrearCuenta extends JFrame {
 		setBounds(250, 50, 1100, 700);
 		getContentPane().setLayout(null);
 		
-		txt1 = new JTextField();
-		txt1.setBounds(217, 203, 360, 25);
-		getContentPane().add(txt1);
-		txt1.setColumns(10);
+		Nick = new JTextField();
+		Nick.setBounds(365, 163, 360, 25);
+		getContentPane().add(Nick);
+		Nick.setColumns(10);
 		
-		txt2 = new JTextField();
-		txt2.setColumns(10);
-		txt2.setBounds(217, 270, 360, 25);
-		getContentPane().add(txt2);
+		CorreoElectronico = new JTextField();
+		CorreoElectronico.setColumns(10);
+		CorreoElectronico.setBounds(365, 230, 360, 25);
+		getContentPane().add(CorreoElectronico);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(217, 341, 360, 25);
-		getContentPane().add(textField_2);
+		RepCorreoElectronico = new JTextField();
+		RepCorreoElectronico.setColumns(10);
+		RepCorreoElectronico.setBounds(365, 298, 360, 25);
+		getContentPane().add(RepCorreoElectronico);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(217, 411, 360, 25);
-		getContentPane().add(textField_3);
+		Contrasena = new JTextField();
+		Contrasena.setColumns(10);
+		Contrasena.setBounds(365, 370, 360, 25);
+		getContentPane().add(Contrasena);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(217, 483, 360, 25);
-		getContentPane().add(textField_4);
+		RepContrasena = new JTextField();
+		RepContrasena.setColumns(10);
+		RepContrasena.setBounds(365, 440, 360, 25);
+		getContentPane().add(RepContrasena);
 		
 		JLabel Escrito1 = new JLabel("Nick");
 		Escrito1.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		Escrito1.setBounds(217, 168, 52, 25);
+		Escrito1.setBounds(365, 127, 52, 25);
 		getContentPane().add(Escrito1);
 		
 		JLabel lblNewLabel = new JLabel("Correo Electrónico");
 		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		lblNewLabel.setBounds(217, 247, 192, 13);
+		lblNewLabel.setBounds(365, 206, 192, 13);
 		getContentPane().add(lblNewLabel);
 		
 		JLabel txt3 = new JLabel("Repite correo electrónico");
 		txt3.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		txt3.setBounds(217, 318, 244, 13);
+		txt3.setBounds(365, 274, 244, 13);
 		getContentPane().add(txt3);
 		
 		JLabel txt4 = new JLabel("Contraseña");
 		txt4.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		txt4.setBounds(217, 388, 192, 13);
+		txt4.setBounds(365, 346, 192, 13);
 		getContentPane().add(txt4);
 		
-		JLabel escrito5 = new JLabel("");
-		escrito5.setToolTipText("Repite contraseña");
-		escrito5.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		escrito5.setBounds(217, 460, 192, 13);
-		getContentPane().add(escrito5);
-		
-		JLabel lblRepiteContrasea = new JLabel("Repite contraseña");
-		lblRepiteContrasea.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		lblRepiteContrasea.setBounds(217, 460, 192, 13);
-		getContentPane().add(lblRepiteContrasea);
-		
 		JLabel lblNewLabel_1 = new JLabel("Crea Tu Cuenta");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(385, 81, 192, 40);
+		lblNewLabel_1.setBounds(446, 53, 192, 40);
 		getContentPane().add(lblNewLabel_1);
 		
-		JButton boton1 = new JButton("Crear Cuenta");
-		boton1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		boton1.setBounds(217, 529, 360, 40);
-		boton1.addActionListener(new ActionListener() {
+		JButton CrearCuenta = new JButton("Crear Cuenta");
+		CrearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		CrearCuenta.setBounds(365, 509, 360, 40);
+		CrearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		getContentPane().add(boton1);
+		getContentPane().add(CrearCuenta);
 		
-		JButton boton2 = new JButton("Iniciar Sesion");
-		boton2.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		boton2.setBounds(324, 628, 166, 25);
-		boton2.addActionListener(new ActionListener() {
+		JButton IniciarSesion = new JButton("Iniciar Sesion");
+		IniciarSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		IniciarSesion.setBounds(468, 595, 170, 30);
+		IniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		getContentPane().add(boton2);
+		getContentPane().add(IniciarSesion);
 		
 		JLabel txt6 = new JLabel("¿Ya tienes una cuenta?");
+		txt6.setHorizontalAlignment(SwingConstants.CENTER);
 		txt6.setFont(new Font("Arial", Font.PLAIN, 15));
-		txt6.setBounds(336, 594, 166, 30);
+		txt6.setBounds(468, 573, 170, 25);
 		getContentPane().add(txt6);
+		
+		JLabel lblRepetirContrasea = new JLabel("Repetir contraseña");
+		lblRepetirContrasea.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		lblRepetirContrasea.setBounds(365, 416, 192, 13);
+		getContentPane().add(lblRepetirContrasea);
 	}
-
 }

@@ -68,78 +68,83 @@ public class Opciones extends JFrame {
 		lblPolticaDePrivacidad.setBounds(349, 453, 255, 29);
 		contentPane.add(lblPolticaDePrivacidad);
 		
-		JButton btnNewButton = new JButton("Abrir");
-		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton.setBounds(630, 453, 130, 29);
-		contentPane.add(btnNewButton);
+		JButton Tick4 = new JButton("Abrir");
+		Tick4.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Tick4.setBounds(630, 453, 130, 29);
+		contentPane.add(Tick4);
 		
-		JButton btnNewButton_1 = new JButton("Tick");
-		btnNewButton_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1.setBounds(630, 397, 130, 29);
-		contentPane.add(btnNewButton_1);
+		JButton Tick3 = new JButton("Tick");
+		Tick3.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Tick3.setBounds(630, 397, 130, 29);
+		contentPane.add(Tick3);
 		
-		JButton btnNewButton_1_1 = new JButton("Tick");
-		btnNewButton_1_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1_1.setBounds(630, 338, 130, 29);
-		contentPane.add(btnNewButton_1_1);
+		JButton Tick2 = new JButton("Tick");
+		Tick2.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Tick2.setBounds(630, 338, 130, 29);
+		contentPane.add(Tick2);
 		
-		JButton btnNewButton_1_2 = new JButton("Tick");
-		btnNewButton_1_2.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1_2.setBounds(630, 286, 130, 29);
-		contentPane.add(btnNewButton_1_2);
+		JButton Tick1 = new JButton("Tick");
+		Tick1.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Tick1.setBounds(630, 286, 130, 29);
+		Tick1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Tick1.setLabel("lalalalalaa");
+			}
+		});
+		contentPane.add(Tick1);
 		
-		JButton btnNewButton_2 = new JButton("Español");
-		btnNewButton_2.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_2.setBounds(612, 149, 130, 45);
-		contentPane.add(btnNewButton_2);
+		JButton Idioma = new JButton("Español");
+		Idioma.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Idioma.setBounds(612, 149, 130, 45);
+		contentPane.add(Idioma);
 		
-		JButton btnNewButton_1_3 = new JButton("Conectarse");
-		btnNewButton_1_3.addActionListener(new ActionListener() {
+		JButton RedSocial = new JButton("Conectarse");
+		RedSocial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1_3.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1_3.setBounds(328, 149, 176, 45);
-		contentPane.add(btnNewButton_1_3);
+		RedSocial.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		RedSocial.setBounds(328, 149, 176, 45);
+		contentPane.add(RedSocial);
 		
 		JLabel lblnecesitasAyuda = new JLabel("¿Necesitas ayuda?");
 		lblnecesitasAyuda.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		lblnecesitasAyuda.setBounds(349, 235, 226, 29);
 		contentPane.add(lblnecesitasAyuda);
 		
-		JButton btnNewButton_1_2_1 = new JButton("Soporte");
-		btnNewButton_1_2_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_1_2_1.setBounds(630, 235, 130, 29);
-		contentPane.add(btnNewButton_1_2_1);
+		JButton Soporte = new JButton("Soporte");
+		Soporte.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Soporte.setBounds(630, 235, 130, 29);
+		contentPane.add(Soporte);
 		
 		JLabel lblNewLabel_1 = new JLabel("AJUSTES");
 		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		lblNewLabel_1.setBounds(487, 57, 222, 36);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton_3 = new JButton("Aceptar");
-		btnNewButton_3.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_3.setBounds(331, 531, 147, 36);
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton Aceptar = new JButton("Aceptar");
+		Aceptar.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Aceptar.setBounds(331, 531, 147, 36);
+		Aceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton_3);
+		contentPane.add(Aceptar);
 		
-		JButton btnNewButton_3_1 = new JButton("Atrás");
-		btnNewButton_3_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		btnNewButton_3_1.setBounds(647, 531, 147, 36);
-		btnNewButton_3_1.addActionListener(new ActionListener() {
+		JButton Atras = new JButton("Atrás");
+		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		Atras.setBounds(647, 531, 147, 36);
+		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(btnNewButton_3_1);
+		contentPane.add(Atras);
 	}
 
 }
