@@ -46,40 +46,40 @@ public class Partida extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Posicione los Barcos");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel.setBounds(522, 20, 294, 50);
-		contentPane.add(lblNewLabel);
+		JLabel textPosicion = new JLabel("Posicione los Barcos");
+		textPosicion.setHorizontalAlignment(SwingConstants.CENTER);
+		textPosicion.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textPosicion.setBounds(522, 20, 294, 50);
+		contentPane.add(textPosicion);
 		
-		JLabel lblNewLabel_1 = new JLabel("Tablero");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(154, 125, 327, 258);
-		contentPane.add(lblNewLabel_1);
+		JLabel textTablero1 = new JLabel("Tablero");
+		textTablero1.setHorizontalAlignment(SwingConstants.CENTER);
+		textTablero1.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textTablero1.setBounds(154, 125, 327, 258);
+		contentPane.add(textTablero1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Tablero");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(706, 111, 327, 258);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel textTablero2 = new JLabel("Tablero");
+		textTablero2.setHorizontalAlignment(SwingConstants.CENTER);
+		textTablero2.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textTablero2.setBounds(706, 111, 327, 258);
+		contentPane.add(textTablero2);
 		
-		JLabel lblNewLabel_2 = new JLabel("Su campo");
-		lblNewLabel_2.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_2.setBounds(269, 413, 109, 23);
-		contentPane.add(lblNewLabel_2);
+		JLabel textCampo = new JLabel("Su campo");
+		textCampo.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textCampo.setBounds(269, 413, 109, 23);
+		contentPane.add(textCampo);
 		
-		JLabel lblNewLabel_2_1 = new JLabel("Campo del Contrincante");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_2_1.setBounds(738, 413, 298, 23);
-		contentPane.add(lblNewLabel_2_1);
+		JLabel textCampoContrario = new JLabel("Campo del Contrincante");
+		textCampoContrario.setHorizontalAlignment(SwingConstants.CENTER);
+		textCampoContrario.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textCampoContrario.setBounds(738, 413, 298, 23);
+		contentPane.add(textCampoContrario);
 		
-		JLabel lblNewLabel_3 = new JLabel("Otro Jugador");
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3.setBounds(823, 446, 157, 29);
-		contentPane.add(lblNewLabel_3);
+		JLabel textOtroJugador = new JLabel("Otro Jugador");
+		textOtroJugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textOtroJugador.setHorizontalAlignment(SwingConstants.CENTER);
+		textOtroJugador.setBounds(823, 446, 157, 29);
+		contentPane.add(textOtroJugador);
 		
 		JButton btnNewButton = new JButton("Aleatoriamente");
 		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
