@@ -17,7 +17,7 @@ public class OlvidarContraseña extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField UsuarioEmail;
+	private JTextField usuEmail;
 
 	/**
 	 * Launch the application.
@@ -47,33 +47,33 @@ public class OlvidarContraseña extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton Continuar = new JButton("Continuar");
-		Continuar.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Continuar.setBounds(329, 359, 180, 40);
-		contentPane.add(Continuar);
+		JButton continuar = new JButton("Continuar");
+		continuar.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		continuar.setBounds(329, 359, 180, 40);
+		contentPane.add(continuar);
 		
-		UsuarioEmail = new JTextField();
-		UsuarioEmail.setBounds(329, 281, 425, 35);
-		contentPane.add(UsuarioEmail);
-		UsuarioEmail.setColumns(10);
+		usuEmail = new JTextField();
+		usuEmail.setBounds(329, 281, 425, 35);
+		contentPane.add(usuEmail);
+		usuEmail.setColumns(10);
 		
-		JLabel lblNewLabel = new JLabel("Usuario o Correo Electrónico");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		lblNewLabel.setBounds(329, 229, 425, 31);
-		contentPane.add(lblNewLabel);
+		JLabel textUsuEmail = new JLabel("Usuario o Correo Electrónico");
+		textUsuEmail.setHorizontalAlignment(SwingConstants.CENTER);
+		textUsuEmail.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textUsuEmail.setBounds(329, 229, 425, 31);
+		contentPane.add(textUsuEmail);
 		
-		JButton Atras = new JButton("Atrás");
-		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Atras.setBounds(577, 359, 180, 40);
-		Atras.addActionListener(new ActionListener() {
+		JButton atras = new JButton("Atrás");
+		atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		atras.setBounds(577, 359, 180, 40);
+		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(Atras);
+		contentPane.add(atras);
 	}
 
 }

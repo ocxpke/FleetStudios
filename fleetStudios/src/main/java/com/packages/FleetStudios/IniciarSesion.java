@@ -19,8 +19,8 @@ public class IniciarSesion extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textContrasena;
-	private JTextField textField;
+	private JTextField email;
+	private JTextField contrasena;
 
 	/**
 	 * Launch the application.
@@ -51,69 +51,69 @@ public class IniciarSesion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel escrito0 = new JLabel("Tu Cuenta");
-		escrito0.setHorizontalAlignment(SwingConstants.CENTER);
-		escrito0.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		escrito0.setBounds(433, 116, 240, 29);
-		contentPane.add(escrito0);
+		JLabel textTuCuenta = new JLabel("Tu Cuenta");
+		textTuCuenta.setHorizontalAlignment(SwingConstants.CENTER);
+		textTuCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textTuCuenta.setBounds(433, 116, 240, 29);
+		contentPane.add(textTuCuenta);
 		
-		JLabel escrito1 = new JLabel("Correo Electrónico");
-		escrito1.setFont(new Font("Courgette", Font.PLAIN, 15));
-		escrito1.setBounds(369, 197, 138, 18);
-		contentPane.add(escrito1);
+		JLabel textEmail = new JLabel("Correo Electrónico");
+		textEmail.setFont(new Font("Courgette", Font.PLAIN, 15));
+		textEmail.setBounds(369, 197, 138, 18);
+		contentPane.add(textEmail);
 		
-		JLabel escrito2 = new JLabel("Contraseña");
-		escrito2.setFont(new Font("Courgette", Font.PLAIN, 15));
-		escrito2.setBounds(369, 271, 138, 18);
-		contentPane.add(escrito2);
-		
-		textContrasena = new JTextField();
-		textContrasena.setColumns(10);
-		textContrasena.setBounds(369, 215, 360, 25);
+		JLabel textContrasena = new JLabel("Contraseña");
+		textContrasena.setFont(new Font("Courgette", Font.PLAIN, 15));
+		textContrasena.setBounds(369, 271, 138, 18);
 		contentPane.add(textContrasena);
 		
-		JButton Continuar = new JButton("Continuar");
-		Continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		Continuar.addActionListener(new ActionListener() {
+		email = new JTextField();
+		email.setColumns(10);
+		email.setBounds(369, 215, 360, 25);
+		contentPane.add(email);
+		
+		JButton continuar = new JButton("Continuar");
+		continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		Continuar.setBounds(463, 409, 185, 40);
-		contentPane.add(Continuar);
+		continuar.setBounds(463, 409, 185, 40);
+		contentPane.add(continuar);
 		
-		JButton OlvidarContraseña = new JButton("¿Has olvidado tu contraseña?");
-		OlvidarContraseña.addActionListener(new ActionListener() {
+		JButton olvidarContrasena = new JButton("¿Has olvidado tu contraseña?");
+		olvidarContrasena.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OlvidarContraseña newFrame = new OlvidarContraseña();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		OlvidarContraseña.setBounds(463, 376, 185, 20);
-		contentPane.add(OlvidarContraseña);
+		olvidarContrasena.setBounds(463, 376, 185, 20);
+		contentPane.add(olvidarContrasena);
 		
-		JLabel lblNewLabel = new JLabel("¿No tienes cuenta registrada?");
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(433, 472, 240, 13);
-		contentPane.add(lblNewLabel);
+		JLabel textPregunta = new JLabel("¿No tienes cuenta registrada?");
+		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
+		textPregunta.setBounds(433, 472, 240, 13);
+		contentPane.add(textPregunta);
 		
-		JButton Registrate = new JButton("Registrate");
-		Registrate.setBounds(502, 497, 110, 25);
-		Registrate.addActionListener(new ActionListener() {
+		JButton registrate = new JButton("Registrate");
+		registrate.setBounds(502, 497, 110, 25);
+		registrate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CrearCuenta newFrame = new CrearCuenta();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(Registrate);
+		contentPane.add(registrate);
 		
-		textField = new JTextField();
-		textField.setColumns(10);
-		textField.setBounds(369, 289, 360, 25);
-		contentPane.add(textField);
+		contrasena = new JTextField();
+		contrasena.setColumns(10);
+		contrasena.setBounds(369, 289, 360, 25);
+		contentPane.add(contrasena);
 	}
 }

@@ -47,10 +47,10 @@ public class Primera_Capa extends JFrame {
 
 		setContentPane(contentPane);
 		
-		JButton InicioSesion = new JButton("Iniciar Sesión");
-		InicioSesion.setBounds(447, 237, 190, 65);
-		InicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		InicioSesion.addActionListener(new ActionListener() {
+		JButton inicioSesion = new JButton("Iniciar Sesión");
+		inicioSesion.setBounds(447, 237, 190, 65);
+		inicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		inicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
 				newFrame.setVisible(true);
@@ -58,19 +58,19 @@ public class Primera_Capa extends JFrame {
 			}
 		});
 		contentPane.setLayout(null);
-		contentPane.add(InicioSesion);
+		contentPane.add(inicioSesion);
 		
-		JButton CreaUnaCuenta = new JButton("Crea tu Cuenta");
-		CreaUnaCuenta.setBounds(447, 345, 190, 65);
-		CreaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		CreaUnaCuenta.addActionListener(new ActionListener() {
+		JButton creaUnaCuenta = new JButton("Crea tu Cuenta");
+		creaUnaCuenta.setBounds(447, 345, 190, 65);
+		creaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		creaUnaCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CrearCuenta nuevoUsu = new CrearCuenta();
 				nuevoUsu.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(CreaUnaCuenta);
+		contentPane.add(creaUnaCuenta);
 			
 	}
 }
