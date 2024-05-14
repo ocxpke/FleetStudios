@@ -48,28 +48,28 @@ public class CrearCuenta extends JFrame {
 		getContentPane().setLayout(null);
 		
 		nick = new JTextField();
-		nick.setBounds(365, 163, 371, 25);
+		nick.setBounds(365, 163, 371, 40);
 		getContentPane().add(nick);
 		nick.setColumns(10);
 		
 		email = new JTextField();
 		email.setColumns(10);
-		email.setBounds(365, 230, 371, 25);
+		email.setBounds(365, 230, 371, 40);
 		getContentPane().add(email);
 		
 		repEmail = new JTextField();
 		repEmail.setColumns(10);
-		repEmail.setBounds(365, 298, 371, 25);
+		repEmail.setBounds(365, 298, 371, 40);
 		getContentPane().add(repEmail);
 		
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
-		contrasena.setBounds(365, 370, 371, 25);
+		contrasena.setBounds(365, 370, 371, 40);
 		getContentPane().add(contrasena);
 		
 		repContrasena = new JTextField();
 		repContrasena.setColumns(10);
-		repContrasena.setBounds(365, 440, 371, 25);
+		repContrasena.setBounds(365, 440, 371, 40);
 		getContentPane().add(repContrasena);
 		
 		JLabel textNick = new JLabel("Nick");
@@ -100,7 +100,7 @@ public class CrearCuenta extends JFrame {
 		
 		JButton crearCuenta = new JButton("Crear Cuenta");
 		crearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		crearCuenta.setBounds(365, 509, 370, 50);
+		crearCuenta.setBounds(365, 540, 370, 50);
 		crearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
