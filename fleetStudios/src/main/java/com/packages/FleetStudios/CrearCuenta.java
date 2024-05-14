@@ -47,20 +47,31 @@ public class CrearCuenta extends JFrame {
 		getContentPane().setLayout(null);
 		
 		nick = new JTextField();
-		nick.setBounds(353, 250, 371, 25);
+		nick.setBounds(365, 163, 371, 40);
+
 		getContentPane().add(nick);
 		nick.setColumns(10);
 		
 		email = new JTextField();
 		email.setColumns(10);
-		email.setBounds(353, 311, 371, 25);
+		email.setBounds(365, 230, 371, 40);
 		getContentPane().add(email);
+		
+		repEmail = new JTextField();
+		repEmail.setColumns(10);
+		repEmail.setBounds(365, 298, 371, 40);
+		getContentPane().add(repEmail);
 		
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
-		contrasena.setBounds(353, 369, 371, 25);
+		contrasena.setBounds(365, 370, 371, 40);
 		getContentPane().add(contrasena);
 		
+		repContrasena = new JTextField();
+		repContrasena.setColumns(10);
+		repContrasena.setBounds(365, 440, 371, 40);
+		getContentPane().add(repContrasena);
+
 		JLabel textNick = new JLabel("Nick");
 		textNick.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		textNick.setBounds(353, 221, 52, 25);
@@ -79,7 +90,8 @@ public class CrearCuenta extends JFrame {
 		JButton crearCuenta = new JButton("");
 		crearCuenta.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\CreaTuCuenta.png"));
 		crearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		crearCuenta.setBounds(449, 416, 190, 40);
+		crearCuenta.setBounds(365, 540, 370, 50);
+
 		crearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
