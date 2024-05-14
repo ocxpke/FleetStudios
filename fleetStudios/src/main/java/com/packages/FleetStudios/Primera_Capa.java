@@ -74,11 +74,6 @@ public class Primera_Capa extends JFrame {
 			}
 		});
 		contentPane.add(creaUnaCuenta);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\1.jpg"));
-		lblNewLabel.setBounds(0, 0, 1100, 700);
-		contentPane.add(lblNewLabel);
 			
 	}
 }

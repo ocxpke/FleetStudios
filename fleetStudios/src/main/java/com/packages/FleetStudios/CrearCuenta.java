@@ -13,14 +13,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
 
 public class CrearCuenta extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField nick;
 	private JTextField email;
+	private JTextField repEmail;
 	private JTextField contrasena;
+	private JTextField repContrasena;
 
 	/**
 	 * Launch the application.
@@ -48,7 +49,6 @@ public class CrearCuenta extends JFrame {
 		
 		nick = new JTextField();
 		nick.setBounds(365, 163, 371, 40);
-
 		getContentPane().add(nick);
 		nick.setColumns(10);
 		
@@ -71,27 +71,36 @@ public class CrearCuenta extends JFrame {
 		repContrasena.setColumns(10);
 		repContrasena.setBounds(365, 440, 371, 40);
 		getContentPane().add(repContrasena);
-
+		
 		JLabel textNick = new JLabel("Nick");
 		textNick.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		textNick.setBounds(353, 221, 52, 25);
+		textNick.setBounds(365, 127, 52, 25);
 		getContentPane().add(textNick);
 		
 		JLabel textEmail = new JLabel("Correo Electrónico");
 		textEmail.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		textEmail.setBounds(353, 285, 192, 13);
+		textEmail.setBounds(365, 206, 192, 13);
 		getContentPane().add(textEmail);
+		
+		JLabel textFechaNac = new JLabel("Fecha de nacimiento");
+		textFechaNac.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		textFechaNac.setBounds(365, 274, 244, 13);
+		getContentPane().add(textFechaNac);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
 		textContrasena.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		textContrasena.setBounds(353, 346, 192, 13);
+		textContrasena.setBounds(365, 346, 192, 13);
 		getContentPane().add(textContrasena);
 		
-		JButton crearCuenta = new JButton("");
-		crearCuenta.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\CreaTuCuenta.png"));
+		JLabel textCrearCuenta = new JLabel("Crea Tu Cuenta");
+		textCrearCuenta.setHorizontalAlignment(SwingConstants.CENTER);
+		textCrearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textCrearCuenta.setBounds(446, 53, 192, 40);
+		getContentPane().add(textCrearCuenta);
+		
+		JButton crearCuenta = new JButton("Crear Cuenta");
 		crearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		crearCuenta.setBounds(365, 540, 370, 50);
-
+		crearCuenta.setBounds(366, 540, 370, 50);
 		crearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
@@ -101,10 +110,9 @@ public class CrearCuenta extends JFrame {
 		});
 		getContentPane().add(crearCuenta);
 		
-		JButton iniciarSesion = new JButton("");
-		iniciarSesion.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\iniciar sesión.png"));
+		JButton iniciarSesion = new JButton("Iniciar Sesion");
 		iniciarSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		iniciarSesion.setBounds(492, 510, 100, 40);
+		iniciarSesion.setBounds(468, 622, 170, 40);
 		iniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
@@ -117,16 +125,24 @@ public class CrearCuenta extends JFrame {
 		JLabel textPregunta = new JLabel("¿Ya tienes una cuenta?");
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
 		textPregunta.setFont(new Font("Arial", Font.PLAIN, 15));
-		textPregunta.setBounds(459, 475, 158, 25);
+		textPregunta.setBounds(468, 600, 170, 25);
 		getContentPane().add(textPregunta);
 		
+		JLabel textRepContrasena = new JLabel("Repetir contraseña");
+		textRepContrasena.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		textRepContrasena.setBounds(365, 416, 192, 13);
+		getContentPane().add(textRepContrasena);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 366, 700);
+		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(734, 0, 366, 700);
+		getContentPane().add(btnNewButton_1);
+		
 		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\4.jpg"));
 		fondo.setBounds(0, 0, 1100, 700);
 		getContentPane().add(fondo);
-		
-		
-		
-		
 	}
 }

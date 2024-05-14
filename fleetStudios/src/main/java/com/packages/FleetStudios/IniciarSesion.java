@@ -51,23 +51,28 @@ public class IniciarSesion extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JLabel textTuCuenta = new JLabel("Tu Cuenta");
+		textTuCuenta.setHorizontalAlignment(SwingConstants.CENTER);
+		textTuCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textTuCuenta.setBounds(433, 112, 240, 29);
+		contentPane.add(textTuCuenta);
+		
 		JLabel textEmail = new JLabel("Correo Electrónico");
 		textEmail.setFont(new Font("Courgette", Font.PLAIN, 15));
-		textEmail.setBounds(358, 204, 138, 18);
+		textEmail.setBounds(358, 193, 138, 18);
 		contentPane.add(textEmail);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
 		textContrasena.setFont(new Font("Courgette", Font.PLAIN, 15));
-		textContrasena.setBounds(358, 260, 138, 18);
+		textContrasena.setBounds(358, 285, 138, 18);
 		contentPane.add(textContrasena);
 		
 		email = new JTextField();
 		email.setColumns(10);
-		email.setBounds(358, 224, 381, 26);
+		email.setBounds(358, 213, 381, 40);
 		contentPane.add(email);
 		
-		JButton continuar = new JButton("");
-		continuar.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\continuar.png"));
+		JButton continuar = new JButton("Continuar");
 		continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -76,11 +81,10 @@ public class IniciarSesion extends JFrame {
 				dispose();
 			}
 		});
-		continuar.setBounds(424, 333, 250, 50);
+		continuar.setBounds(385, 500, 330, 70);
 		contentPane.add(continuar);
 		
-		JButton olvidarContrasena = new JButton("");
-		olvidarContrasena.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\¿Has olvidado tu contraseña.png"));
+		JButton olvidarContrasena = new JButton("¿Has olvidado tu contraseña?");
 		olvidarContrasena.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OlvidarContraseña newFrame = new OlvidarContraseña();
@@ -88,18 +92,17 @@ public class IniciarSesion extends JFrame {
 				dispose();
 			}
 		});
-		olvidarContrasena.setBounds(506, 393, 100, 40);
+		olvidarContrasena.setBounds(423, 427, 250, 40);
 		contentPane.add(olvidarContrasena);
 		
 		JLabel textPregunta = new JLabel("¿No tienes cuenta registrada?");
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
-		textPregunta.setBounds(467, 467, 180, 18);
+		textPregunta.setBounds(433, 606, 240, 13);
 		contentPane.add(textPregunta);
 		
-		JButton registrate = new JButton("");
-		registrate.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\Registrate.jpg"));
+		JButton registrate = new JButton("Registrate");
 		registrate.setFont(new Font("Unispace", Font.PLAIN, 11));
-		registrate.setBounds(517, 487, 70, 40);
+		registrate.setBounds(472, 619, 160, 60);
 		registrate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				CrearCuenta newFrame = new CrearCuenta();
@@ -111,14 +114,19 @@ public class IniciarSesion extends JFrame {
 		
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
-		contrasena.setBounds(358, 278, 381, 26);
+		contrasena.setBounds(358, 304, 381, 40);
 		contentPane.add(contrasena);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\xandreiitaax\\OneDrive\\Escritorio\\f\\FleetStudios\\fleetStudios\\src\\main\\bin\\com\\packages\\3.jpg"));
-		lblNewLabel.setBounds(0, 0, 1110, 703);
-		contentPane.add(lblNewLabel);
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 360, 700);
+		contentPane.add(btnNewButton);
 		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(739, 0, 360, 700);
+		contentPane.add(btnNewButton_1);
 		
+		JLabel fondo = new JLabel("");
+		fondo.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondo);
 	}
 }
