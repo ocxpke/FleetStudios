@@ -39,7 +39,7 @@ public class Continuar extends JFrame {
 	 */
 	public Continuar() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(250, 50, 1100, 700);
+		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -48,7 +48,7 @@ public class Continuar extends JFrame {
 		
 		JButton unJugador = new JButton("Un Jugador");
 		unJugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		unJugador.setBounds(354, 205, 435, 45);
+		unJugador.setBounds(333, 201, 435, 60);
 		unJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				UnJugador newFrame = new UnJugador();
@@ -60,7 +60,7 @@ public class Continuar extends JFrame {
 		
 		JButton multijugador = new JButton("Multijugador");
 		multijugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		multijugador.setBounds(354, 274, 435, 45);
+		multijugador.setBounds(333, 284, 435, 60);
 		multijugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MultiJugador newFrame = new MultiJugador();
@@ -76,7 +76,7 @@ public class Continuar extends JFrame {
 			}
 		});
 		tienda.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tienda.setBounds(354, 346, 435, 45);
+		tienda.setBounds(333, 363, 435, 60);
 		contentPane.add(tienda);
 		
 		JButton opciones = new JButton("Opciones");
@@ -88,7 +88,7 @@ public class Continuar extends JFrame {
 			}
 		});
 		opciones.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		opciones.setBounds(311, 426, 230, 40);
+		opciones.setBounds(249, 463, 230, 50);
 		contentPane.add(opciones);
 		
 		JButton cerrar = new JButton("Cerrar Sink&Win");
@@ -100,7 +100,27 @@ public class Continuar extends JFrame {
 			}
 		});
 		cerrar.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		cerrar.setBounds(621, 426, 230, 40);
+		cerrar.setBounds(621, 463, 230, 50);
 		contentPane.add(cerrar);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 333, 446);
+		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(767, 0, 333, 446);
+		contentPane.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("New button");
+		btnNewButton_2.setBounds(0, 470, 250, 23);
+		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_2_1 = new JButton("New button");
+		btnNewButton_2_1.setBounds(850, 476, 250, 23);
+		contentPane.add(btnNewButton_2_1);
+		
+		JLabel fondo = new JLabel("");
+		fondo.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondo);
 	}
 }

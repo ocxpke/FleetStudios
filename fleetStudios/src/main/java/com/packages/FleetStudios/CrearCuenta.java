@@ -44,32 +44,32 @@ public class CrearCuenta extends JFrame {
 	 */
 	public CrearCuenta() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(250, 50, 1100, 700);
+		setBounds(250, 50, 1115, 740);
 		getContentPane().setLayout(null);
 		
 		nick = new JTextField();
-		nick.setBounds(365, 163, 360, 25);
+		nick.setBounds(365, 163, 371, 25);
 		getContentPane().add(nick);
 		nick.setColumns(10);
 		
 		email = new JTextField();
 		email.setColumns(10);
-		email.setBounds(365, 230, 360, 25);
+		email.setBounds(365, 230, 371, 25);
 		getContentPane().add(email);
 		
 		repEmail = new JTextField();
 		repEmail.setColumns(10);
-		repEmail.setBounds(365, 298, 360, 25);
+		repEmail.setBounds(365, 298, 371, 25);
 		getContentPane().add(repEmail);
 		
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
-		contrasena.setBounds(365, 370, 360, 25);
+		contrasena.setBounds(365, 370, 371, 25);
 		getContentPane().add(contrasena);
 		
 		repContrasena = new JTextField();
 		repContrasena.setColumns(10);
-		repContrasena.setBounds(365, 440, 360, 25);
+		repContrasena.setBounds(365, 440, 371, 25);
 		getContentPane().add(repContrasena);
 		
 		JLabel textNick = new JLabel("Nick");
@@ -82,10 +82,10 @@ public class CrearCuenta extends JFrame {
 		textEmail.setBounds(365, 206, 192, 13);
 		getContentPane().add(textEmail);
 		
-		JLabel textRepEmail = new JLabel("Repite correo electrónico");
-		textRepEmail.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		textRepEmail.setBounds(365, 274, 244, 13);
-		getContentPane().add(textRepEmail);
+		JLabel textFechaNac = new JLabel("Fecha de nacimiento");
+		textFechaNac.setFont(new Font("Arial Black", Font.PLAIN, 15));
+		textFechaNac.setBounds(365, 274, 244, 13);
+		getContentPane().add(textFechaNac);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
 		textContrasena.setFont(new Font("Arial Black", Font.PLAIN, 15));
@@ -100,7 +100,7 @@ public class CrearCuenta extends JFrame {
 		
 		JButton crearCuenta = new JButton("Crear Cuenta");
 		crearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		crearCuenta.setBounds(365, 509, 360, 40);
+		crearCuenta.setBounds(365, 509, 370, 50);
 		crearCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
@@ -112,7 +112,7 @@ public class CrearCuenta extends JFrame {
 		
 		JButton iniciarSesion = new JButton("Iniciar Sesion");
 		iniciarSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
-		iniciarSesion.setBounds(468, 595, 170, 30);
+		iniciarSesion.setBounds(468, 622, 170, 40);
 		iniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				IniciarSesion newFrame = new IniciarSesion();
@@ -125,12 +125,24 @@ public class CrearCuenta extends JFrame {
 		JLabel textPregunta = new JLabel("¿Ya tienes una cuenta?");
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
 		textPregunta.setFont(new Font("Arial", Font.PLAIN, 15));
-		textPregunta.setBounds(468, 573, 170, 25);
+		textPregunta.setBounds(468, 600, 170, 25);
 		getContentPane().add(textPregunta);
 		
 		JLabel textRepContrasena = new JLabel("Repetir contraseña");
 		textRepContrasena.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		textRepContrasena.setBounds(365, 416, 192, 13);
 		getContentPane().add(textRepContrasena);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 366, 700);
+		getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(734, 0, 366, 700);
+		getContentPane().add(btnNewButton_1);
+		
+		JLabel fondo = new JLabel("");
+		fondo.setBounds(0, 0, 1100, 700);
+		getContentPane().add(fondo);
 	}
 }

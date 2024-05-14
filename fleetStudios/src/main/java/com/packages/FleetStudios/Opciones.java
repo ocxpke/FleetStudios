@@ -41,7 +41,7 @@ public class Opciones extends JFrame {
 	 */
 	public Opciones() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(250, 50, 1100, 700);
+		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -68,24 +68,24 @@ public class Opciones extends JFrame {
 		textPolitica.setBounds(349, 453, 255, 29);
 		contentPane.add(textPolitica);
 		
-		JButton tick4 = new JButton("Abrir");
+		JButton tick4 = new JButton("0");
 		tick4.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick4.setBounds(630, 453, 130, 29);
+		tick4.setBounds(676, 442, 50, 50);
 		contentPane.add(tick4);
 		
-		JButton tick3 = new JButton("Tick");
+		JButton tick3 = new JButton("0");
 		tick3.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick3.setBounds(630, 397, 130, 29);
+		tick3.setBounds(676, 386, 50, 50);
 		contentPane.add(tick3);
 		
-		JButton tick2 = new JButton("Tick");
+		JButton tick2 = new JButton("0");
 		tick2.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick2.setBounds(630, 338, 130, 29);
+		tick2.setBounds(676, 327, 50, 50);
 		contentPane.add(tick2);
 		
-		JButton tick1 = new JButton("Tick");
+		JButton tick1 = new JButton("0");
 		tick1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick1.setBounds(630, 286, 130, 29);
+		tick1.setBounds(676, 275, 50, 50);
 		tick1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tick1.setLabel("lalalalalaa");
@@ -95,7 +95,7 @@ public class Opciones extends JFrame {
 		
 		JButton textIdioma = new JButton("Español");
 		textIdioma.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textIdioma.setBounds(612, 149, 130, 45);
+		textIdioma.setBounds(642, 149, 130, 55);
 		contentPane.add(textIdioma);
 		
 		JButton textRedSocial = new JButton("Conectarse");
@@ -104,7 +104,7 @@ public class Opciones extends JFrame {
 			}
 		});
 		textRedSocial.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textRedSocial.setBounds(328, 149, 176, 45);
+		textRedSocial.setBounds(325, 149, 180, 55);
 		contentPane.add(textRedSocial);
 		
 		JLabel textAyuda = new JLabel("¿Necesitas ayuda?");
@@ -114,7 +114,7 @@ public class Opciones extends JFrame {
 		
 		JButton soporte = new JButton("Soporte");
 		soporte.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		soporte.setBounds(630, 235, 130, 29);
+		soporte.setBounds(630, 229, 130, 40);
 		contentPane.add(soporte);
 		
 		JLabel textAjustes = new JLabel("AJUSTES");
@@ -124,7 +124,7 @@ public class Opciones extends JFrame {
 		
 		JButton Aceptar = new JButton("Aceptar");
 		Aceptar.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Aceptar.setBounds(331, 531, 147, 36);
+		Aceptar.setBounds(325, 531, 150, 50);
 		Aceptar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
@@ -136,7 +136,7 @@ public class Opciones extends JFrame {
 		
 		JButton Atras = new JButton("Atrás");
 		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Atras.setBounds(647, 531, 147, 36);
+		Atras.setBounds(622, 531, 150, 50);
 		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
@@ -145,6 +145,18 @@ public class Opciones extends JFrame {
 			}
 		});
 		contentPane.add(Atras);
+		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.setBounds(0, 0, 327, 700);
+		contentPane.add(btnNewButton);
+		
+		JLabel fondo = new JLabel("");
+		fondo.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondo);
+		
+		JButton btnNewButton_1 = new JButton("New button");
+		btnNewButton_1.setBounds(770, 0, 327, 700);
+		contentPane.add(btnNewButton_1);
 	}
 
 }
