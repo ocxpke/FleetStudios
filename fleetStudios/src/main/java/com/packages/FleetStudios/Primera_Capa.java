@@ -49,8 +49,8 @@ public class Primera_Capa extends JFrame {
 		setContentPane(contentPane);
 		
 		JButton inicioSesion = new JButton("");
-		inicioSesion.setIcon(new ImageIcon("C:\\Users\\ocXpke\\Downloads\\Iniciar sesion.png"));
-		inicioSesion.setBounds(375, 351, 350, 80);
+		inicioSesion.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/Iniciar sesión.png")));
+		inicioSesion.setBounds(375, 370, 350, 80);
 		inicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		inicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -63,8 +63,8 @@ public class Primera_Capa extends JFrame {
 		contentPane.add(inicioSesion);
 		
 		JButton creaUnaCuenta = new JButton("");
-		creaUnaCuenta.setIcon(new ImageIcon("C:\\Users\\ocXpke\\Downloads\\Diseño sin título (1).png"));
-		creaUnaCuenta.setBounds(375, 429, 350, 80);
+		creaUnaCuenta.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/CreaUnaCuenta.png")));
+		creaUnaCuenta.setBounds(375, 472, 350, 80);
 		creaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		creaUnaCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
