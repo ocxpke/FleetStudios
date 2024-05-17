@@ -5,9 +5,9 @@ import java.lang.Math;
 
 public class Tablero {
 
-	final int XLEN = 10;
-	final int YLEN = 10;
-	int[][] table = new int[XLEN][YLEN];
+	private final int XLEN = 10;
+	private final int YLEN = 10;
+	private int[][] table = new int[XLEN][YLEN];
 
 	public Tablero() {
 		for (int i = 0; i < this.table.length; i++) {
@@ -27,7 +27,10 @@ public class Tablero {
 	}
 
 	public void ship2() {
-
+		Scanner sc = new Scanner(System.in);
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+		this.table[x][y]=1;
 	}
 
 	public String toString() {

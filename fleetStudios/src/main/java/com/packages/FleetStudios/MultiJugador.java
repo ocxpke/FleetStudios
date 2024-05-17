@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class MultiJugador extends JFrame {
 

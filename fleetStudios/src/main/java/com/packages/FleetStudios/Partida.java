@@ -84,13 +84,7 @@ public class Partida extends JFrame {
 		JButton btnNewButton = new JButton("Aleatoriamente");
 		btnNewButton.setFont(new Font("Arial Black", Font.PLAIN, 10));
 		btnNewButton.setBounds(235, 558, 123, 21);
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Aleatoriamente newFrame = new Aleatoriamente();
-				newFrame.setVisible(true);
-				dispose();
-			}
-		});
+	
 		contentPane.add(btnNewButton);
 		
 		JButton btnManual = new JButton("Manual");
