@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class CrearCuenta extends JFrame {
 
@@ -92,13 +93,8 @@ public class CrearCuenta extends JFrame {
 		textContrasena.setBounds(365, 346, 192, 13);
 		getContentPane().add(textContrasena);
 		
-		JLabel textCrearCuenta = new JLabel("Crea Tu Cuenta");
-		textCrearCuenta.setHorizontalAlignment(SwingConstants.CENTER);
-		textCrearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textCrearCuenta.setBounds(446, 53, 192, 40);
-		getContentPane().add(textCrearCuenta);
-		
-		JButton crearCuenta = new JButton("Crear Cuenta");
+		JButton crearCuenta = new JButton("");
+		crearCuenta.setIcon(new ImageIcon(CrearCuenta.class.getResource("/images/CreaCuenta.png")));
 		crearCuenta.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		crearCuenta.setBounds(366, 540, 370, 50);
 		crearCuenta.addActionListener(new ActionListener() {
@@ -110,7 +106,8 @@ public class CrearCuenta extends JFrame {
 		});
 		getContentPane().add(crearCuenta);
 		
-		JButton iniciarSesion = new JButton("Iniciar Sesion");
+		JButton iniciarSesion = new JButton("");
+		iniciarSesion.setIcon(new ImageIcon(CrearCuenta.class.getResource("/images/IniciarSesion2.png")));
 		iniciarSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		iniciarSesion.setBounds(468, 622, 170, 40);
 		iniciarSesion.addActionListener(new ActionListener() {
@@ -133,15 +130,8 @@ public class CrearCuenta extends JFrame {
 		textRepContrasena.setBounds(365, 416, 192, 13);
 		getContentPane().add(textRepContrasena);
 		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.setBounds(0, 0, 366, 700);
-		getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("New button");
-		btnNewButton_1.setBounds(734, 0, 366, 700);
-		getContentPane().add(btnNewButton_1);
-		
 		JLabel fondo = new JLabel("");
+		fondo.setIcon(new ImageIcon(CrearCuenta.class.getResource("/images/fondoCreaTuCuenta.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		getContentPane().add(fondo);
 	}
