@@ -4,7 +4,7 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		Connection conn = DatabaseCon.connect();
+		//Connection conn = DatabaseCon.connect();
 		/*
 		ResultSet rs = DatabaseCon.getQuery(conn, "SELECT * FROM paco");
 		

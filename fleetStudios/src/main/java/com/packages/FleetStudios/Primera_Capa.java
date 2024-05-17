@@ -74,6 +74,11 @@ public class Primera_Capa extends JFrame {
 			}
 		});
 		contentPane.add(creaUnaCuenta);
+		
+		JLabel fondo = new JLabel("");
+		fondo.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/Sink & win.gif")));
+		fondo.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondo);
 			
 	}
 }
