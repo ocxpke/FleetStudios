@@ -11,7 +11,11 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.awt.event.ActionEvent;
+
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
 
 public class Continuar extends JFrame {
@@ -95,9 +99,22 @@ public class Continuar extends JFrame {
 		JButton cerrar = new JButton("Cerrar Sink&Win");
 		cerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Primera_Capa newFrame = new Primera_Capa();
-				newFrame.setVisible(true);
-				dispose();
+				Primera_Capa newFrame;
+				try {
+					newFrame = new Primera_Capa();
+					newFrame.setVisible(true);
+					dispose();
+				} catch (UnsupportedAudioFileException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} catch (LineUnavailableException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}
 		});
 		cerrar.setFont(new Font("Arial Black", Font.PLAIN, 20));

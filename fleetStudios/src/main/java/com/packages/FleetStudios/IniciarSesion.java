@@ -14,6 +14,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import java.awt.Color;
+
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
@@ -28,10 +30,11 @@ public class IniciarSesion extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Clip c = null;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					IniciarSesion frame = new IniciarSesion();
+					IniciarSesion frame = new IniciarSesion(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +46,7 @@ public class IniciarSesion extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IniciarSesion() {
+	public IniciarSesion(Clip c) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -74,6 +77,7 @@ public class IniciarSesion extends JFrame {
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar();
+				c.stop();
 				newFrame.setVisible(true);
 				dispose();
 			}
