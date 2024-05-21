@@ -22,7 +22,7 @@ public class Primera_Capa extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
+
 	/**
 	 * Launch the application.
 	 * 
@@ -30,12 +30,14 @@ public class Primera_Capa extends JFrame {
 	 * @throws UnsupportedAudioFileException
 	 * @throws LineUnavailableException
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 
 		EventQueue.invokeLater(new Runnable() {
+			Clip cNull = null;
+
 			public void run() {
 				try {
-					Primera_Capa frame = new Primera_Capa();
+					Primera_Capa frame = new Primera_Capa(cNull);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -47,14 +49,15 @@ public class Primera_Capa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Primera_Capa()  throws UnsupportedAudioFileException, IOException, LineUnavailableException {
-		String ruta = "musicaJuego.wav";
-		//File f = new File(ruta);
-		AudioInputStream audStream = AudioSystem.getAudioInputStream(new File (ruta));
-		Clip c = AudioSystem.getClip();
-		c.open(audStream);
-		//c.loop(Clip.LOOP_CONTINUOUSLY);
-		c.start();
+	public Primera_Capa(Clip cUseless) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+
+		String ruta = "./src/main/java/images/musicaJuego.wav";
+		AudioInputStream audStream = AudioSystem.getAudioInputStream(new File(ruta));
+		Clip musicTheme = AudioSystem.getClip();
+		musicTheme.open(audStream);
+		musicTheme.loop(Clip.LOOP_CONTINUOUSLY);
+		musicTheme.start();
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -69,7 +72,7 @@ public class Primera_Capa extends JFrame {
 		inicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		inicioSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				IniciarSesion newFrame = new IniciarSesion(c);
+				IniciarSesion newFrame = new IniciarSesion(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -83,7 +86,7 @@ public class Primera_Capa extends JFrame {
 		creaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		creaUnaCuenta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrearCuenta nuevoUsu = new CrearCuenta();
+				CrearCuenta nuevoUsu = new CrearCuenta(musicTheme);
 				nuevoUsu.setVisible(true);
 				dispose();
 			}

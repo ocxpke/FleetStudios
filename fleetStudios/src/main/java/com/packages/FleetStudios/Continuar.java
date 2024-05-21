@@ -14,6 +14,7 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 
+import javax.sound.sampled.Clip;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.ImageIcon;
@@ -27,10 +28,11 @@ public class Continuar extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Clip c = null;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Continuar frame = new Continuar();
+					Continuar frame = new Continuar(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +44,7 @@ public class Continuar extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Continuar() {
+	public Continuar(Clip musicTheme) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -56,7 +58,7 @@ public class Continuar extends JFrame {
 		unJugador.setBounds(333, 201, 435, 60);
 		unJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UnJugador newFrame = new UnJugador();
+				UnJugador newFrame = new UnJugador(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -68,7 +70,7 @@ public class Continuar extends JFrame {
 		multijugador.setBounds(333, 284, 435, 60);
 		multijugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultiJugador newFrame = new MultiJugador();
+				MultiJugador newFrame = new MultiJugador(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -87,7 +89,7 @@ public class Continuar extends JFrame {
 		JButton opciones = new JButton("Opciones");
 		opciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Opciones newFrame = new Opciones();
+				Opciones newFrame = new Opciones(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -101,19 +103,14 @@ public class Continuar extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Primera_Capa newFrame;
 				try {
-					newFrame = new Primera_Capa();
+					musicTheme.stop();
+					newFrame = new Primera_Capa(musicTheme);
 					newFrame.setVisible(true);
 					dispose();
-				} catch (UnsupportedAudioFileException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} catch (LineUnavailableException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
+				} catch (Exception y) {
+					System.err.println(y);
 				}
+					
 				
 			}
 		});

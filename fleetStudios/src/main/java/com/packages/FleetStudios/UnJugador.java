@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.SwingConstants;
+import javax.sound.sampled.Clip;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 
@@ -23,10 +24,11 @@ public class UnJugador extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Clip c = null;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UnJugador frame = new UnJugador();
+					UnJugador frame = new UnJugador(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +40,7 @@ public class UnJugador extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public UnJugador() {
+	public UnJugador(Clip musicTheme) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1100, 700);
 		contentPane = new JPanel();
@@ -70,7 +72,7 @@ public class UnJugador extends JFrame {
 		atras.setBounds(504, 427, 154, 47);
 		atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Continuar newFrame = new Continuar();
+				Continuar newFrame = new Continuar(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
