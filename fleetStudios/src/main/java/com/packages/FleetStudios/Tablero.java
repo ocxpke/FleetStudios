@@ -1,46 +1,67 @@
 package com.packages.FleetStudios;
 
-import java.util.Scanner;
-import java.lang.Math;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 
-public class Tablero {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
-	private final int XLEN = 10;
-	private final int YLEN = 10;
-	private int[][] table = new int[XLEN][YLEN];
+public class Tablero extends JFrame {
 
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Tablero frame = new Tablero();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
 	public Tablero() {
-		for (int i = 0; i < this.table.length; i++) {
-			for (int z = 0; z < this.table[i].length; z++) {
-				this.table[i][z] = 0;
-			}
-		}
-		this.ship2();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1100, 700);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setLayout(null);
+		setContentPane(contentPane);
+		
+		createBoard(contentPane ,100, 184, 30,30);
+		createBoard(contentPane ,644, 184, 30,30);
+		
+		
 	}
 
-	public void ship3() {
+	private void createBoard(JPanel panel, int startX, int startY, int buttonWidth, int buttonHeight) {
+        int space = 5; // Espacio entre los botones
 
-	}
+        for (int row = 0; row < 10; row++) {
+            for (int col = 0; col < 10; col++) {
+                JButton button = new JButton();
+                int x = startX + col * (buttonWidth + space);
+                int y = startY + row * (buttonHeight + space);
+                button.setBounds(x, y, buttonWidth, buttonHeight); //coloca cada boton en un punto determinado
+                panel.add(button);
+            }
+        }
+    }
 
-	public void ship4() {
-
-	}
-
-	public void ship2() {
-		Scanner sc = new Scanner(System.in);
-		int x = sc.nextInt();
-		int y = sc.nextInt();
-		this.table[x][y]=1;
-	}
-
-	public String toString() {
-		String res="";
-		for (int i = 0; i < this.table.length; i++) {
-			for (int z = 0; z < this.table[i].length; z++) {
-				res+=this.table[i][z]+" ";
-			}
-			res+="\n";
-		}
-		return res;
-	}
 }

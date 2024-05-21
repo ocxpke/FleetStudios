@@ -73,7 +73,7 @@ public class IniciarSesion extends JFrame {
 		contentPane.add(email);
 		
 		JButton continuar = new JButton("");
-		continuar.setIcon(new ImageIcon(IniciarSesion.class.getResource("/images/continuarr.png")));
+		continuar.setIcon(new ImageIcon(IniciarSesion.class.getResource("/images/continuar.png")));
 		continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
