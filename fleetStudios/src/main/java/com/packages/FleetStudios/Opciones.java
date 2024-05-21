@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Opciones extends JFrame {
 
@@ -159,45 +162,28 @@ public class Opciones extends JFrame {
 		});
 		contentPane.add(sonidoBtn);
 
-		JButton textIdioma = new JButton("Español");
-		textIdioma.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textIdioma.setBounds(642, 149, 130, 55);
-		contentPane.add(textIdioma);
-
-		JButton textRedSocial = new JButton("Conectarse");
-		textRedSocial.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		textRedSocial.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textRedSocial.setBounds(325, 149, 180, 55);
-		contentPane.add(textRedSocial);
-
 		JLabel textAyuda = new JLabel("¿Necesitas ayuda?");
 		textAyuda.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
 		textAyuda.setBounds(349, 235, 271, 29);
 		contentPane.add(textAyuda);
 
-		JButton soporte = new JButton("Soporte");
+		JButton soporte = new JButton("");
+		soporte.setIcon(new ImageIcon(Opciones.class.getResource("/images/soporte.png")));
 		soporte.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		soporte.setBounds(630, 229, 130, 40);
-		contentPane.add(soporte);
-
-		JButton Aceptar = new JButton("Aceptar");
-		Aceptar.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Aceptar.setBounds(325, 531, 150, 50);
-		Aceptar.addActionListener(new ActionListener() {
+		soporte.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Continuar newFrame = new Continuar(musicTheme);
+				Soporte newFrame = new Soporte();
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		contentPane.add(Aceptar);
+		contentPane.add(soporte);
 
-		JButton Atras = new JButton("Atrás");
+		JButton Atras = new JButton("");
+		Atras.setIcon(new ImageIcon(Opciones.class.getResource("/images/AtrasOpciones.png")));
 		Atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		Atras.setBounds(622, 531, 150, 50);
+		Atras.setBounds(473, 507, 150, 50);
 		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Continuar newFrame = new Continuar(musicTheme);
@@ -211,6 +197,7 @@ public class Opciones extends JFrame {
 		fondo.setIcon(new ImageIcon(Opciones.class.getResource("/images/ajustes.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
+		
+		
 	}
-
 }
