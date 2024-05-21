@@ -13,6 +13,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 
 public class OlvidarContraseña extends JFrame {
 
@@ -50,7 +51,8 @@ public class OlvidarContraseña extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton continuar = new JButton("Continuar");
+		JButton continuar = new JButton("");
+		continuar.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/continuar2.png")));
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -71,7 +73,8 @@ public class OlvidarContraseña extends JFrame {
 		labelNickText.setBounds(329, 212, 425, 31);
 		contentPane.add(labelNickText);
 		
-		JButton atras = new JButton("Atrás");
+		JButton atras = new JButton("");
+		atras.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/atras.png")));
 		atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		atras.setBounds(574, 446, 180, 40);
 		atras.addActionListener(new ActionListener() {
@@ -96,6 +99,7 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.add(textUsuEmail_1);
 		
 		JLabel fondo = new JLabel("");
+		fondo.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/fondoOlvidarContrasena.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
 	}

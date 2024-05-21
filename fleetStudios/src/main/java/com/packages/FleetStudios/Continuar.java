@@ -53,7 +53,8 @@ public class Continuar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton unJugador = new JButton("Un Jugador");
+		JButton unJugador = new JButton("");
+		unJugador.setIcon(new ImageIcon(Continuar.class.getResource("/images/Un jugador.png")));
 		unJugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		unJugador.setBounds(333, 201, 435, 60);
 		unJugador.addActionListener(new ActionListener() {
@@ -65,7 +66,8 @@ public class Continuar extends JFrame {
 		});
 		contentPane.add(unJugador);
 		
-		JButton multijugador = new JButton("Multijugador");
+		JButton multijugador = new JButton("");
+		multijugador.setIcon(new ImageIcon(Continuar.class.getResource("/images/Multijugador.png")));
 		multijugador.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		multijugador.setBounds(333, 284, 435, 60);
 		multijugador.addActionListener(new ActionListener() {
@@ -77,7 +79,8 @@ public class Continuar extends JFrame {
 		});
 		contentPane.add(multijugador);
 		
-		JButton tienda = new JButton("Tienda");
+		JButton tienda = new JButton("");
+		tienda.setIcon(new ImageIcon(Continuar.class.getResource("/images/Tienda.png")));
 		tienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
@@ -86,7 +89,8 @@ public class Continuar extends JFrame {
 		tienda.setBounds(333, 458, 435, 60);
 		contentPane.add(tienda);
 		
-		JButton opciones = new JButton("Opciones");
+		JButton opciones = new JButton("");
+		opciones.setIcon(new ImageIcon(Continuar.class.getResource("/images/opciones.png")));
 		opciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Opciones newFrame = new Opciones(musicTheme);
@@ -98,7 +102,8 @@ public class Continuar extends JFrame {
 		opciones.setBounds(250, 540, 230, 50);
 		contentPane.add(opciones);
 		
-		JButton cerrar = new JButton("Cerrar Sink&Win");
+		JButton cerrar = new JButton("");
+		cerrar.setIcon(new ImageIcon(Continuar.class.getResource("/images/cerrarr.png")));
 		cerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Primera_Capa newFrame;
@@ -118,7 +123,8 @@ public class Continuar extends JFrame {
 		cerrar.setBounds(622, 540, 230, 50);
 		contentPane.add(cerrar);
 		
-		JButton inventario = new JButton("Inventario");
+		JButton inventario = new JButton("");
+		inventario.setIcon(new ImageIcon(Continuar.class.getResource("/images/Inventario.png")));
 		inventario.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		inventario.setBounds(333, 370, 435, 60);
 		contentPane.add(inventario);
