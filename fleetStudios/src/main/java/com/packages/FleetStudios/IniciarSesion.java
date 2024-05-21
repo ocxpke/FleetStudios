@@ -57,16 +57,17 @@ public class IniciarSesion extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel textEmail = new JLabel("Correo Electrónico");
-		textEmail.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textEmail.setBounds(361, 205, 216, 18);
+		textEmail.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textEmail.setBounds(361, 195, 265, 28);
 		contentPane.add(textEmail);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
-		textContrasena.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textContrasena.setBounds(361, 288, 138, 18);
+		textContrasena.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textContrasena.setBounds(361, 278, 165, 28);
 		contentPane.add(textContrasena);
 		
 		email = new JTextField();
+		email.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		email.setColumns(10);
 		email.setBounds(361, 223, 370, 40);
 		contentPane.add(email);
@@ -97,7 +98,7 @@ public class IniciarSesion extends JFrame {
 		contentPane.add(olvidarContrasena);
 		
 		JLabel textPregunta = new JLabel("¿No tienes cuenta?");
-		textPregunta.setFont(new Font("3270 Nerd Font", Font.BOLD | Font.ITALIC, 15));
+		textPregunta.setFont(new Font("Monocraft", Font.ITALIC, 15));
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
 		textPregunta.setBounds(423, 530, 250, 13);
 		contentPane.add(textPregunta);
@@ -116,6 +117,7 @@ public class IniciarSesion extends JFrame {
 		contentPane.add(registrate);
 		
 		contrasena = new JTextField();
+		contrasena.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		contrasena.setColumns(10);
 		contrasena.setBounds(361, 304, 370, 40);
 		contentPane.add(contrasena);

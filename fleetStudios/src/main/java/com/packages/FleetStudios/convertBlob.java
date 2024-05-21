@@ -10,7 +10,7 @@ public class convertBlob {
 	public static void main(String[] args) throws SQLException {
 		Connection conn = DatabaseCon.connect();
 		Statement sta = DatabaseCon.statement(conn);
-		int i = DatabaseCon.insertQuery(conn, sta,
+		int i = DatabaseCon.modifyQuery(conn, sta,
 				"Insert into USERS (nick, email, password, dateBirth, coins) values ( 'joseR', 'jose@gmail.com','1234', '01/01/2000', 77);");
 		System.out.println(i);
 

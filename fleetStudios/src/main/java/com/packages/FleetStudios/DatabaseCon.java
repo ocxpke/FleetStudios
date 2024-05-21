@@ -51,7 +51,7 @@ public class DatabaseCon {
 	}
 
 	// Para insertar, modificar, o borrar
-	protected static int insertQuery(Connection conn, Statement sta, String q) {
+	protected static int modifyQuery(Connection conn, Statement sta, String q) {
 		int ret = -1;
 
 		if (conn == null || sta == null) {
