@@ -25,6 +25,7 @@ import javax.swing.JProgressBar;
 import javax.swing.JSpinner;
 import javax.swing.JToggleButton;
 import javax.swing.JTextField;
+import javax.sound.sampled.Clip;
 import javax.swing.DropMode;
 import javax.swing.JTextArea;
 
@@ -40,10 +41,11 @@ public class Soporte extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		Clip c =null;
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Soporte frame = new Soporte();
+					Soporte frame = new Soporte(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -55,7 +57,7 @@ public class Soporte extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Soporte() {
+	public Soporte(Clip c) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
 		contentPane = new JPanel();
@@ -63,6 +65,15 @@ public class Soporte extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Continuar con = new Continuar(c);
+			}
+		});
+		btnAtras.setBounds(968, 39, 89, 23);
+		contentPane.add(btnAtras);
 		
 		table = new JTable();
 		table.setBounds(391, 284, 1, 1);

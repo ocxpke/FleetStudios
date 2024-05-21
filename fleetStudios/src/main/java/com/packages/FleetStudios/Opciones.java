@@ -173,7 +173,7 @@ public class Opciones extends JFrame {
 		soporte.setBounds(630, 229, 130, 40);
 		soporte.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Soporte newFrame = new Soporte();
+				Soporte newFrame = new Soporte(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
