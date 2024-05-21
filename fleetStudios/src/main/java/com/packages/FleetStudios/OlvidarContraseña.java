@@ -62,13 +62,14 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.add(continuar);
 		
 		nickField = new JTextField();
-		nickField.setBounds(329, 243, 425, 35);
+		nickField.setFont(new Font("Monocraft", Font.PLAIN, 20));
+		nickField.setBounds(329, 243, 425, 40);
 		contentPane.add(nickField);
 		nickField.setColumns(10);
 		
 		JLabel labelNickText = new JLabel("Nick de usuario");
-		labelNickText.setHorizontalAlignment(SwingConstants.CENTER);
-		labelNickText.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
+		labelNickText.setHorizontalAlignment(SwingConstants.LEFT);
+		labelNickText.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
 		labelNickText.setBounds(329, 212, 425, 31);
 		contentPane.add(labelNickText);
 		
@@ -86,13 +87,14 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.add(atras);
 		
 		newPassword = new JTextField();
+		newPassword.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		newPassword.setColumns(10);
-		newPassword.setBounds(329, 341, 425, 35);
+		newPassword.setBounds(329, 341, 425, 40);
 		contentPane.add(newPassword);
 		
 		JLabel textUsuEmail_1 = new JLabel("Nueva contraseña");
-		textUsuEmail_1.setHorizontalAlignment(SwingConstants.CENTER);
-		textUsuEmail_1.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
+		textUsuEmail_1.setHorizontalAlignment(SwingConstants.LEFT);
+		textUsuEmail_1.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
 		textUsuEmail_1.setBounds(329, 309, 425, 31);
 		contentPane.add(textUsuEmail_1);
 		

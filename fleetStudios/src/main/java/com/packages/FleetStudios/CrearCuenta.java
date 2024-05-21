@@ -50,43 +50,47 @@ public class CrearCuenta extends JFrame {
 		getContentPane().setLayout(null);
 		
 		nick = new JTextField();
+		nick.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		nick.setBounds(366, 214, 371, 40);
 		getContentPane().add(nick);
 		nick.setColumns(10);
 		
 		email = new JTextField();
+		email.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		email.setColumns(10);
 		email.setBounds(366, 281, 371, 40);
 		getContentPane().add(email);
 		
 		fecNac = new JTextField();
+		fecNac.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		fecNac.setColumns(10);
 		fecNac.setBounds(366, 349, 371, 40);
 		getContentPane().add(fecNac);
 		
 		contra = new JTextField();
+		contra.setFont(new Font("Monocraft", Font.PLAIN, 20));
 		contra.setColumns(10);
 		contra.setBounds(366, 421, 371, 40);
 		getContentPane().add(contra);
 		
 		JLabel textNick = new JLabel("Nick");
-		textNick.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textNick.setBounds(366, 190, 52, 25);
+		textNick.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textNick.setBounds(366, 195, 121, 25);
 		getContentPane().add(textNick);
 		
 		JLabel textEmail = new JLabel("Correo Electrónico");
-		textEmail.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textEmail.setBounds(366, 265, 209, 13);
+		textEmail.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textEmail.setBounds(366, 258, 272, 25);
 		getContentPane().add(textEmail);
 		
 		JLabel textFechaNac = new JLabel("Fecha de nacimiento");
-		textFechaNac.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textFechaNac.setBounds(366, 332, 244, 13);
+		textFechaNac.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textFechaNac.setBounds(366, 325, 272, 25);
 		getContentPane().add(textFechaNac);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
-		textContrasena.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
-		textContrasena.setBounds(366, 404, 192, 13);
+		textContrasena.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textContrasena.setBounds(366, 397, 192, 25);
 		getContentPane().add(textContrasena);
 		
 		JButton crearCuenta = new JButton("");
@@ -117,8 +121,8 @@ public class CrearCuenta extends JFrame {
 		
 		JLabel textPregunta = new JLabel("¿Ya tienes una cuenta?");
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
-		textPregunta.setFont(new Font("3270 Nerd Font", Font.BOLD | Font.ITALIC, 15));
-		textPregunta.setBounds(457, 532, 192, 25);
+		textPregunta.setFont(new Font("Monocraft", Font.ITALIC, 15));
+		textPregunta.setBounds(439, 533, 229, 25);
 		getContentPane().add(textPregunta);
 		
 		JLabel fondo = new JLabel("");

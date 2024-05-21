@@ -23,7 +23,7 @@ public class Opciones extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private boolean play = true;
+	private boolean play = true, noti = true, chatBool = true, politics = true;
 	/**
 	 * @wbp.nonvisual location=-27,4
 	 */
@@ -49,8 +49,8 @@ public class Opciones extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Opciones(Clip musicTheme) { 
-		
+	public Opciones(Clip musicTheme) {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -60,50 +60,88 @@ public class Opciones extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel textSonido = new JLabel("Sonido");
-		textSonido.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textSonido.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
 		textSonido.setBounds(349, 286, 185, 29);
 		contentPane.add(textSonido);
 
 		JLabel textNotificacion = new JLabel("Notificación");
-		textNotificacion.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		textNotificacion.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
 		textNotificacion.setBounds(349, 338, 185, 29);
 		contentPane.add(textNotificacion);
 
 		JLabel textChat = new JLabel("Chat del Juego");
-		textChat.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textChat.setBounds(349, 397, 185, 29);
+		textChat.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textChat.setBounds(349, 397, 280, 29);
 		contentPane.add(textChat);
 
 		JLabel textPolitica = new JLabel("Política de Privacidad");
-		textPolitica.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textPolitica.setBounds(349, 453, 255, 29);
+		textPolitica.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textPolitica.setBounds(349, 453, 317, 29);
 		contentPane.add(textPolitica);
 
-		JButton tick4 = new JButton("0");
-		tick4.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick4.setBounds(676, 442, 50, 50);
-		contentPane.add(tick4);
-
-		JButton tick3 = new JButton("0");
-		tick3.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick3.setBounds(676, 386, 50, 50);
-		contentPane.add(tick3);
-
-		JButton tick2 = new JButton("0");
-		tick2.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick2.setBounds(676, 327, 50, 50);
-		contentPane.add(tick2);
-
-		JButton tick1 = new JButton("0");
-		tick1.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		tick1.setBounds(676, 275, 50, 50);
-		tick1.addActionListener(new ActionListener() {
+		JButton politicaBtn = new JButton("");
+		politicaBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tick1.setLabel("lalalalalaa");
+				if (politics) {
+					politicaBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/cross.png")));
+					politics = false;
+				} else {
+					politicaBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+					politics = true;
+				}
+			}
+		});
+		politicaBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+		politicaBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		politicaBtn.setBounds(676, 442, 50, 50);
+		contentPane.add(politicaBtn);
+
+		JButton chatBtn = new JButton("");
+		chatBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (chatBool) {
+					chatBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/cross.png")));
+					chatBool = false;
+				} else {
+					chatBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+					chatBool = true;
+				}
+			}
+		});
+		chatBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+		chatBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		chatBtn.setBounds(676, 386, 50, 50);
+		contentPane.add(chatBtn);
+
+		JButton notificacionBtn = new JButton("");
+		notificacionBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (noti) {
+					notificacionBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/cross.png")));
+					noti = false;
+				} else {
+					notificacionBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+					noti = true;
+				}
+			}
+		});
+		notificacionBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+		notificacionBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		notificacionBtn.setBounds(676, 331, 50, 50);
+		contentPane.add(notificacionBtn);
+
+		JButton sonidoBtn = new JButton("");
+		sonidoBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
+		sonidoBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
+		sonidoBtn.setBounds(676, 275, 50, 50);
+		sonidoBtn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				if (play) {
+					sonidoBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/cross.png")));
 					musicTheme.close();
 					play = false;
-				}else {
+				} else {
+					sonidoBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
 					try {
 						String ruta = "./src/main/java/images/musicaJuego.wav";
 						AudioInputStream audStream = AudioSystem.getAudioInputStream(new File(ruta));
@@ -116,10 +154,10 @@ public class Opciones extends JFrame {
 					}
 					play = true;
 				}
-				
+
 			}
 		});
-		contentPane.add(tick1);
+		contentPane.add(sonidoBtn);
 
 		JButton textIdioma = new JButton("Español");
 		textIdioma.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -136,19 +174,14 @@ public class Opciones extends JFrame {
 		contentPane.add(textRedSocial);
 
 		JLabel textAyuda = new JLabel("¿Necesitas ayuda?");
-		textAyuda.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textAyuda.setBounds(349, 235, 226, 29);
+		textAyuda.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
+		textAyuda.setBounds(349, 235, 271, 29);
 		contentPane.add(textAyuda);
 
 		JButton soporte = new JButton("Soporte");
 		soporte.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		soporte.setBounds(630, 229, 130, 40);
 		contentPane.add(soporte);
-
-		JLabel textAjustes = new JLabel("AJUSTES");
-		textAjustes.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		textAjustes.setBounds(487, 57, 222, 36);
-		contentPane.add(textAjustes);
 
 		JButton Aceptar = new JButton("Aceptar");
 		Aceptar.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -175,7 +208,7 @@ public class Opciones extends JFrame {
 		contentPane.add(Atras);
 
 		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Opciones.class.getResource("/images/battle.png")));
+		fondo.setIcon(new ImageIcon(Opciones.class.getResource("/images/ajustes.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
 	}
