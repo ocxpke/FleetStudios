@@ -46,7 +46,7 @@ public class IniciarSesion extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public IniciarSesion(Clip c) {
+	public IniciarSesion(Clip musicTheme) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -57,18 +57,18 @@ public class IniciarSesion extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel textEmail = new JLabel("Correo Electrónico");
-		textEmail.setFont(new Font("Courgette", Font.PLAIN, 15));
-		textEmail.setBounds(358, 193, 138, 18);
+		textEmail.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
+		textEmail.setBounds(361, 205, 216, 18);
 		contentPane.add(textEmail);
 		
 		JLabel textContrasena = new JLabel("Contraseña");
-		textContrasena.setFont(new Font("Courgette", Font.PLAIN, 15));
-		textContrasena.setBounds(358, 249, 138, 18);
+		textContrasena.setFont(new Font("3270 Nerd Font", Font.BOLD, 20));
+		textContrasena.setBounds(361, 288, 138, 18);
 		contentPane.add(textContrasena);
 		
 		email = new JTextField();
 		email.setColumns(10);
-		email.setBounds(358, 211, 381, 28);
+		email.setBounds(361, 223, 370, 40);
 		contentPane.add(email);
 		
 		JButton continuar = new JButton("");
@@ -76,39 +76,39 @@ public class IniciarSesion extends JFrame {
 		continuar.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Continuar newFrame = new Continuar();
-				c.stop();
+				Continuar newFrame = new Continuar(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		continuar.setBounds(384, 365, 330, 70);
+		continuar.setBounds(385, 438, 330, 70);
 		contentPane.add(continuar);
 		
 		JButton olvidarContrasena = new JButton("");
 		olvidarContrasena.setIcon(new ImageIcon(IniciarSesion.class.getResource("/images/¿Has olidado tu contraseña.png")));
 		olvidarContrasena.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OlvidarContraseña newFrame = new OlvidarContraseña();
+				OlvidarContraseña newFrame = new OlvidarContraseña(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
 		});
-		olvidarContrasena.setBounds(423, 315, 250, 40);
+		olvidarContrasena.setBounds(423, 387, 250, 40);
 		contentPane.add(olvidarContrasena);
 		
-		JLabel textPregunta = new JLabel("¿No tienes cuenta registrada?");
+		JLabel textPregunta = new JLabel("¿No tienes cuenta?");
+		textPregunta.setFont(new Font("3270 Nerd Font", Font.BOLD | Font.ITALIC, 15));
 		textPregunta.setHorizontalAlignment(SwingConstants.CENTER);
-		textPregunta.setBounds(423, 457, 240, 13);
+		textPregunta.setBounds(423, 530, 250, 13);
 		contentPane.add(textPregunta);
 		
 		JButton registrate = new JButton("");
 		registrate.setIcon(new ImageIcon(IniciarSesion.class.getResource("/images/Registrate.png")));
 		registrate.setFont(new Font("Unispace", Font.PLAIN, 11));
-		registrate.setBounds(466, 480, 160, 60);
+		registrate.setBounds(466, 543, 160, 60);
 		registrate.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CrearCuenta newFrame = new CrearCuenta();
+				CrearCuenta newFrame = new CrearCuenta(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -117,7 +117,7 @@ public class IniciarSesion extends JFrame {
 		
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
-		contrasena.setBounds(358, 265, 381, 28);
+		contrasena.setBounds(361, 304, 370, 40);
 		contentPane.add(contrasena);
 		
 		JLabel fondo = new JLabel("");

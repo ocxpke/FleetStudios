@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class DatabaseCon {
 
+	// Connectamos la base de datos
 	protected static Connection connect() {
 		Connection conn = null;
 
@@ -20,21 +21,49 @@ public class DatabaseCon {
 		return conn;
 	}
 
-	protected static ResultSet getQuery(Connection conn, String q) {
-		ResultSet rs = null;
+	// Connectamos el statement
+	protected static Statement statement(Connection conn) {
 		Statement sta = null;
-		
-		if (conn == null) {
+		try {
+			sta = conn.createStatement();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return sta;
+	}
+
+	// Para selects
+	protected static ResultSet getQuery(Connection conn, Statement sta, String q) {
+		ResultSet rs = null;
+
+		if (conn == null || sta == null) {
 			return rs;
 		}
-		
+
 		try {
 			sta = conn.createStatement();
 			rs = sta.executeQuery(q);
 		} catch (SQLException e) {
-			System.out.println(e);
+			System.err.println(e);
 		}
 
 		return rs;
+	}
+
+	// Para insertar, modificar, o borrar
+	protected static int insertQuery(Connection conn, Statement sta, String q) {
+		int ret = -1;
+
+		if (conn == null || sta == null) {
+			return ret;
+		}
+
+		try {
+			ret = sta.executeUpdate(q);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return ret;
 	}
 }
