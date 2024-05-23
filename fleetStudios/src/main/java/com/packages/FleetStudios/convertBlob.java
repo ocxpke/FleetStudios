@@ -15,7 +15,6 @@ public class convertBlob {
 		System.out.println(i);
 
 		ResultSet rs = DatabaseCon.getQuery(conn, sta, "Select * from users");
-		System.out.println(rs.getRow());
 		while (rs.next()) {
 			System.out.println(rs.getString("nick"));
 		}

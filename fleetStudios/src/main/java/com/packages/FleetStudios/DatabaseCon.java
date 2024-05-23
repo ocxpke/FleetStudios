@@ -43,6 +43,7 @@ public class DatabaseCon {
 		try {
 			sta = conn.createStatement();
 			rs = sta.executeQuery(q);
+			System.out.println(rs.getRow());
 		} catch (SQLException e) {
 			System.err.println(e);
 		}
