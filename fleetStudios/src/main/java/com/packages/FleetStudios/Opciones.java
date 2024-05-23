@@ -27,9 +27,7 @@ public class Opciones extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private boolean play = true, noti = true, chatBool = true, politics = true;
-	/**
-	 * @wbp.nonvisual location=-27,4
-	 */
+	
 	private final JPanel panel = new JPanel();
 
 	/**
@@ -64,22 +62,22 @@ public class Opciones extends JFrame {
 
 		JLabel textSonido = new JLabel("Sonido");
 		textSonido.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
-		textSonido.setBounds(349, 286, 185, 29);
+		textSonido.setBounds(348, 240, 185, 29);
 		contentPane.add(textSonido);
 
 		JLabel textNotificacion = new JLabel("Notificación");
 		textNotificacion.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
-		textNotificacion.setBounds(349, 338, 185, 29);
+		textNotificacion.setBounds(348, 292, 185, 29);
 		contentPane.add(textNotificacion);
 
 		JLabel textChat = new JLabel("Chat del Juego");
 		textChat.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
-		textChat.setBounds(349, 397, 280, 29);
+		textChat.setBounds(348, 351, 280, 29);
 		contentPane.add(textChat);
 
 		JLabel textPolitica = new JLabel("Política de Privacidad");
 		textPolitica.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
-		textPolitica.setBounds(349, 453, 317, 29);
+		textPolitica.setBounds(348, 407, 317, 29);
 		contentPane.add(textPolitica);
 
 		JButton politicaBtn = new JButton("");
@@ -96,7 +94,7 @@ public class Opciones extends JFrame {
 		});
 		politicaBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
 		politicaBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		politicaBtn.setBounds(676, 442, 50, 50);
+		politicaBtn.setBounds(675, 396, 50, 50);
 		contentPane.add(politicaBtn);
 
 		JButton chatBtn = new JButton("");
@@ -113,7 +111,7 @@ public class Opciones extends JFrame {
 		});
 		chatBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
 		chatBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		chatBtn.setBounds(676, 386, 50, 50);
+		chatBtn.setBounds(675, 340, 50, 50);
 		contentPane.add(chatBtn);
 
 		JButton notificacionBtn = new JButton("");
@@ -130,13 +128,13 @@ public class Opciones extends JFrame {
 		});
 		notificacionBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
 		notificacionBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		notificacionBtn.setBounds(676, 331, 50, 50);
+		notificacionBtn.setBounds(675, 285, 50, 50);
 		contentPane.add(notificacionBtn);
 
 		JButton sonidoBtn = new JButton("");
 		sonidoBtn.setIcon(new ImageIcon(Opciones.class.getResource("/images/check.png")));
 		sonidoBtn.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		sonidoBtn.setBounds(676, 275, 50, 50);
+		sonidoBtn.setBounds(675, 229, 50, 50);
 		sonidoBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (play) {
@@ -164,13 +162,13 @@ public class Opciones extends JFrame {
 
 		JLabel textAyuda = new JLabel("¿Necesitas ayuda?");
 		textAyuda.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 20));
-		textAyuda.setBounds(349, 235, 271, 29);
+		textAyuda.setBounds(348, 189, 271, 29);
 		contentPane.add(textAyuda);
 
 		JButton soporte = new JButton("");
 		soporte.setIcon(new ImageIcon(Opciones.class.getResource("/images/soporte.png")));
 		soporte.setFont(new Font("Arial Black", Font.PLAIN, 20));
-		soporte.setBounds(630, 229, 130, 40);
+		soporte.setBounds(629, 183, 130, 40);
 		soporte.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Soporte newFrame = new Soporte(musicTheme);
