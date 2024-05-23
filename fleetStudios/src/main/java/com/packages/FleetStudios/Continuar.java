@@ -64,6 +64,21 @@ public class Continuar extends JFrame {
 				dispose();
 			}
 		});
+		
+		JLabel nomUsu = new JLabel("joseR");
+		nomUsu.setForeground(new Color(0, 0, 255));
+		nomUsu.setFont(new Font("Monocraft", Font.PLAIN, 20));
+		nomUsu.setHorizontalAlignment(SwingConstants.RIGHT);
+		nomUsu.setBounds(899, 642, 121, 30);
+		contentPane.add(nomUsu);
+		
+		JLabel fondoNom = new JLabel("");
+		fondoNom.setBounds(820, 632, 200, 50);
+		contentPane.add(fondoNom);
+		
+		JLabel icoUsu = new JLabel("");
+		icoUsu.setBounds(1030, 632, 50, 50);
+		contentPane.add(icoUsu);
 		contentPane.add(unJugador);
 		
 		JButton multijugador = new JButton("");
