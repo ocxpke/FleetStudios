@@ -50,6 +50,7 @@ public class CrearCuenta extends JFrame {
 	 * Create the frame.
 	 */
 	public CrearCuenta(Clip musicTheme) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		getContentPane().setLayout(null);

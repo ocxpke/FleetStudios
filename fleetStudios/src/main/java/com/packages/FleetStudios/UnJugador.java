@@ -60,7 +60,7 @@ public class UnJugador extends JFrame {
 		comienza.setBounds(240, 427, 154, 47);
 		comienza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Partida newFrame = new Partida();
+				Tablero newFrame = new Tablero();
 				newFrame.setVisible(true);
 				dispose();
 			}

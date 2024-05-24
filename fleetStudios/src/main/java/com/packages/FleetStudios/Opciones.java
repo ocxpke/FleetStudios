@@ -51,7 +51,7 @@ public class Opciones extends JFrame {
 	 * Create the frame.
 	 */
 	public Opciones(Clip musicTheme) {
-
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
