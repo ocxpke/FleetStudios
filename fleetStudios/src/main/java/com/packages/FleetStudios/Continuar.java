@@ -45,6 +45,7 @@ public class Continuar extends JFrame {
 	 * Create the frame.
 	 */
 	public Continuar(Clip musicTheme) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -121,10 +122,10 @@ public class Continuar extends JFrame {
 		cerrar.setIcon(new ImageIcon(Continuar.class.getResource("/images/cerrarr.png")));
 		cerrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Primera_Capa newFrame;
+				PrimeraCapa newFrame;
 				try {
 					musicTheme.stop();
-					newFrame = new Primera_Capa(musicTheme);
+					newFrame = new PrimeraCapa(musicTheme);
 					newFrame.setVisible(true);
 					dispose();
 				} catch (Exception y) {

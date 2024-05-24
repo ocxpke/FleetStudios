@@ -50,6 +50,7 @@ public class IniciarSesion extends JFrame {
 	 * Create the frame.
 	 */
 	public IniciarSesion(Clip musicTheme) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -109,7 +110,7 @@ public class IniciarSesion extends JFrame {
 				.setIcon(new ImageIcon(IniciarSesion.class.getResource("/images/¿Has olidado tu contraseña.png")));
 		olvidarContrasena.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OlvidarContraseña newFrame = new OlvidarContraseña(musicTheme);
+				OlvidarContra newFrame = new OlvidarContra(musicTheme);
 				newFrame.setVisible(true);
 				dispose();
 			}

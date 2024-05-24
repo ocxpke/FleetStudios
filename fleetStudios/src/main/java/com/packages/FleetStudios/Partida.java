@@ -38,6 +38,7 @@ public class Partida extends JFrame {
 	 * Create the frame.
 	 */
 	public Partida() {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1100, 700);
 		contentPane = new JPanel();

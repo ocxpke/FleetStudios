@@ -46,7 +46,11 @@ public class Tablero extends JFrame {
 		
 		createBoard(contentPane ,100, 184, 30,30);
 		createBoard(contentPane ,644, 184, 30,30);
-		
+		/*
+		 *colocar b t1
+		 *colocar b t2
+		 *jugar
+		*/
 		
 	}
 
@@ -55,11 +59,11 @@ public class Tablero extends JFrame {
 
         for (int row = 0; row < 10; row++) {
             for (int col = 0; col < 10; col++) {
-                JButton button = new JButton();
+                BotonBarcos bs = new BotonBarcos(row, col);
                 int x = startX + col * (buttonWidth + space);
                 int y = startY + row * (buttonHeight + space);
-                button.setBounds(x, y, buttonWidth, buttonHeight); //coloca cada boton en un punto determinado
-                panel.add(button);
+                bs.btn.setBounds(x, y, buttonWidth, buttonHeight); //coloca cada boton en un punto determinado
+                panel.add(bs.btn);
             }
         }
     }

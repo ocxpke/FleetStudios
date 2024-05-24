@@ -31,6 +31,7 @@ public class Manual extends JFrame {
 	 * Create the frame.
 	 */
 	public Manual() {
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1100, 700);
 		contentPane = new JPanel();

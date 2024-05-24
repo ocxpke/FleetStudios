@@ -18,7 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
 
-public class Primera_Capa extends JFrame {
+public class PrimeraCapa extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -37,7 +37,7 @@ public class Primera_Capa extends JFrame {
 
 			public void run() {
 				try {
-					Primera_Capa frame = new Primera_Capa(cNull);
+					PrimeraCapa frame = new PrimeraCapa(cNull);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -49,7 +49,7 @@ public class Primera_Capa extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Primera_Capa(Clip cUseless) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+	public PrimeraCapa(Clip cUseless) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
 
 		String ruta = "./src/main/java/images/musicaJuego.wav";
 		AudioInputStream audStream = AudioSystem.getAudioInputStream(new File(ruta));
@@ -58,6 +58,7 @@ public class Primera_Capa extends JFrame {
 		musicTheme.loop(Clip.LOOP_CONTINUOUSLY);
 		musicTheme.start();
 
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -67,7 +68,7 @@ public class Primera_Capa extends JFrame {
 		setContentPane(contentPane);
 
 		JButton inicioSesion = new JButton("");
-		inicioSesion.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/Iniciar sesión.png")));
+		inicioSesion.setIcon(new ImageIcon(PrimeraCapa.class.getResource("/images/Iniciar sesión.png")));
 		inicioSesion.setBounds(375, 370, 350, 80);
 		inicioSesion.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		inicioSesion.addActionListener(new ActionListener() {
@@ -81,7 +82,7 @@ public class Primera_Capa extends JFrame {
 		contentPane.add(inicioSesion);
 
 		JButton creaUnaCuenta = new JButton("");
-		creaUnaCuenta.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/CreaUnaCuenta.png")));
+		creaUnaCuenta.setIcon(new ImageIcon(PrimeraCapa.class.getResource("/images/CreaUnaCuenta.png")));
 		creaUnaCuenta.setBounds(375, 472, 350, 80);
 		creaUnaCuenta.setFont(new Font("Arial Black", Font.PLAIN, 15));
 		creaUnaCuenta.addActionListener(new ActionListener() {
@@ -94,7 +95,7 @@ public class Primera_Capa extends JFrame {
 		contentPane.add(creaUnaCuenta);
 
 		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Primera_Capa.class.getResource("/images/Sink & win.gif")));
+		fondo.setIcon(new ImageIcon(PrimeraCapa.class.getResource("/images/Sink & win.gif")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
 

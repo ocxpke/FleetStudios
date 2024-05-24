@@ -19,7 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.ImageIcon;
 
-public class OlvidarContraseña extends JFrame {
+public class OlvidarContra extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -34,7 +34,7 @@ public class OlvidarContraseña extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					OlvidarContraseña frame = new OlvidarContraseña(c);
+					OlvidarContra frame = new OlvidarContra(c);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -46,7 +46,8 @@ public class OlvidarContraseña extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public OlvidarContraseña(Clip c) {
+	public OlvidarContra(Clip c) {
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		contentPane = new JPanel();
@@ -56,7 +57,7 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.setLayout(null);
 
 		JButton continuar = new JButton("");
-		continuar.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/continuar2.png")));
+		continuar.setIcon(new ImageIcon(OlvidarContra.class.getResource("/images/continuar2.png")));
 		continuar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -97,7 +98,7 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.add(labelNickText);
 
 		JButton atras = new JButton("");
-		atras.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/atras.png")));
+		atras.setIcon(new ImageIcon(OlvidarContra.class.getResource("/images/atras.png")));
 		atras.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		atras.setBounds(570, 446, 180, 40);
 		atras.addActionListener(new ActionListener() {
@@ -122,7 +123,7 @@ public class OlvidarContraseña extends JFrame {
 		contentPane.add(textUsuEmail_1);
 
 		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(OlvidarContraseña.class.getResource("/images/fondoOlvidarContrasena.png")));
+		fondo.setIcon(new ImageIcon(OlvidarContra.class.getResource("/images/fondoOlvidarContrasena.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
 	}
