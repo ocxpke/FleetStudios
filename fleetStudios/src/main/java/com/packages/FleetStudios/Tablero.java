@@ -1,11 +1,14 @@
 package com.packages.FleetStudios;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -16,6 +19,7 @@ public class Tablero extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	protected TablerosBarcos tb1, tb2;
 
 	/**
 	 * Launch the application.
@@ -43,29 +47,39 @@ public class Tablero extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
-		
-		createBoard(contentPane ,100, 184, 30,30);
-		createBoard(contentPane ,644, 184, 30,30);
+
+		tb1 = new TablerosBarcos();
+		tb2 = new TablerosBarcos();
+
+		createBoard(contentPane, 100, 100, 30, 30, tb1);
+		createBoard(contentPane, 644, 100, 30, 30, tb2);
 		/*
-		 *colocar b t1
-		 *colocar b t2
-		 *jugar
-		*/
-		
+		 * colocar b t1 colocar b t2 jugar
+		 */
+
+		tb1.tableroBut[3][3].btn.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//ejemplo
+				tb1.tableroBut[3][3].btn.setBackground(Color.green);
+			}
+		});
+
 	}
 
-	private void createBoard(JPanel panel, int startX, int startY, int buttonWidth, int buttonHeight) {
-        int space = 5; // Espacio entre los botones
+	private void createBoard(JPanel panel, int startX, int startY, int buttonWidth, int buttonHeight,
+			TablerosBarcos tb) {
+		int space = 5; // Espacio entre los botones
 
-        for (int row = 0; row < 10; row++) {
-            for (int col = 0; col < 10; col++) {
-                BotonBarcos bs = new BotonBarcos(row, col);
-                int x = startX + col * (buttonWidth + space);
-                int y = startY + row * (buttonHeight + space);
-                bs.btn.setBounds(x, y, buttonWidth, buttonHeight); //coloca cada boton en un punto determinado
-                panel.add(bs.btn);
-            }
-        }
-    }
+		for (int row = 0; row < 10; row++) {
+			for (int col = 0; col < 10; col++) {
+				BotonBarcos bs = new BotonBarcos(row, col);
+				int x = startX + col * (buttonWidth + space);
+				int y = startY + row * (buttonHeight + space);
+				bs.btn.setBounds(x, y, buttonWidth, buttonHeight); // coloca cada boton en un punto determinado
+				tb.tableroBut[row][col] = bs;
+				panel.add(bs.btn);
+			}
+		}
+	}
 
 }

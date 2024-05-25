@@ -56,11 +56,22 @@ public class PrimeraCapa extends JFrame {
 		Clip musicTheme = AudioSystem.getClip();
 		musicTheme.open(audStream);
 		musicTheme.loop(Clip.LOOP_CONTINUOUSLY);
+		
+		//Reducir volumen audio
+		FloatControl gainControl = 
+			    (FloatControl) musicTheme.getControl(FloatControl.Type.MASTER_GAIN);
+			gainControl.setValue(-15.0f);
+		
 		musicTheme.start();
 
+		//bloqueamos cambio de tamaño de la vnetana
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
+		
+		//siempre se abre en el centro
+		setLocationRelativeTo(null);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 204, 204));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
