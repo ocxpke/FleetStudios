@@ -53,6 +53,7 @@ public class CrearCuenta extends JFrame {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
+		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 
 		nick = new JTextField();

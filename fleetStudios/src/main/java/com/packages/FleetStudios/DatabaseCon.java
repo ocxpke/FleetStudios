@@ -21,7 +21,7 @@ public class DatabaseCon {
 		return conn;
 	}
 
-	// Connectamos el statement
+	// Creamos el statement y lo enlazamos a la conexion
 	protected static Statement statement(Connection conn) {
 		Statement sta = null;
 		try {
