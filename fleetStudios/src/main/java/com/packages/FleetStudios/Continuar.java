@@ -100,6 +100,9 @@ public class Continuar extends JFrame {
 		tienda.setIcon(new ImageIcon(Continuar.class.getResource("/images/Tienda.png")));
 		tienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Tienda newFrame = new Tienda();
+				newFrame.setVisible(true);
+				dispose();
 			}
 		});
 		tienda.setFont(new Font("Arial Black", Font.PLAIN, 20));
