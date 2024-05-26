@@ -147,6 +147,14 @@ public class Continuar extends JFrame {
 		inventario.setIcon(new ImageIcon(Continuar.class.getResource("/images/Inventario.png")));
 		inventario.setFont(new Font("Arial Black", Font.PLAIN, 20));
 		inventario.setBounds(333, 370, 435, 60);
+		inventario.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Inventario newFrame = new Inventario();
+				newFrame.setVisible(true);
+				dispose();
+				
+			}
+		});
 		contentPane.add(inventario);
 		
 		JLabel fondo = new JLabel("");

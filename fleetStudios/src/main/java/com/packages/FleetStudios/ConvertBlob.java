@@ -19,7 +19,7 @@ public class ConvertBlob {
 				byte[] imageBytes = new byte[(int) imgFile.length()];
 				int bytesRead = fis.read(imageBytes);
 				if (imgFile.length() != bytesRead) {
-					System.err.println("Error transofrming file");
+					System.err.println("Error transforming file");
 					return;
 				} else {
 					PreparedStatement ps = con.prepareStatement(
