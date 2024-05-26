@@ -1,8 +1,8 @@
 package com.packages.FleetStudios;
 
 public class Objeto {
-	private String nombre, desc;
-	private int amount;
+	protected String nombre, desc;
+	protected int amount;
 
 	public Objeto(String nombre, String desc, int amount) {
 		this.nombre = nombre;

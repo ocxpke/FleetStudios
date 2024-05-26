@@ -118,7 +118,7 @@ public class CrearCuenta extends JFrame {
 								"Datos erroneos compruebe todos los campos y vuelva a intentarlo.", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 					} else {
-						Continuar newFrame = new Continuar(musicTheme);
+						Continuar newFrame = new Continuar(musicTheme, nick.getText());
 						newFrame.setVisible(true);
 						dispose();
 					}

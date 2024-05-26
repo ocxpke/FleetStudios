@@ -87,12 +87,18 @@ public class IniciarSesion extends JFrame {
 					Statement sta = DatabaseCon.statement(con);
 					ResultSet rs = DatabaseCon.getQuery(con, sta, "Select * from USERS where '" + email.getText()
 							+ "'=email and password='" + contrasena.getText() + "';");
+					String name = null;
+					try {
+						name=rs.getString("nick");
+					}catch(Exception err) {
+						System.err.println(err);
+					}
 					if (!rs.next() || email.getText().isBlank()) {
 						JOptionPane.showMessageDialog(null,
 								"Datos erroneos por favor compruebe el email y la contraseña", "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 					} else {
-						Continuar newFrame = new Continuar(musicTheme);
+						Continuar newFrame = new Continuar(musicTheme, name);
 						newFrame.setVisible(true);
 						dispose();
 					}

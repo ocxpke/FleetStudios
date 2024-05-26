@@ -57,12 +57,7 @@ public class Tablero extends JFrame {
 		 * colocar b t1 colocar b t2 jugar
 		 */
 
-		tb1.tableroBut[3][3].btn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//ejemplo
-				tb1.tableroBut[3][3].btn.setBackground(Color.green);
-			}
-		});
+		tb1.ship2();
 
 	}
 
