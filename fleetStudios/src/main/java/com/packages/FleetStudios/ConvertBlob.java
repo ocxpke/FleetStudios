@@ -1,31 +1,44 @@
 package com.packages.FleetStudios;
 
-import java.sql.Blob;
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
-import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConvertBlob {
 
 	public static void main(String[] args) throws SQLException {
-		Connection conn = DatabaseCon.connect();
-		Statement sta = DatabaseCon.statement(conn);
-		Blob bl=null;
-		int i = DatabaseCon.modifyQuery(conn, sta,
-				"Insert into USERS (nick, email, password, dateBirth, coins) values ( 'joseR', 'jose@gmail.com','1234', '01/01/2000', 77);");
-		System.out.println(i);
-		ResultSet rs = DatabaseCon.getQuery(conn, sta, "Select * from users");
-		rs.getBlob(null);
-		while (rs.next()) {
-			System.out.println(rs.getString("nick"));
+		Connection con = DatabaseCon.connect();
+		System.out.println("Comenzando...");
+		//Cambia la ruta para cada objeto
+		File imgFile = new File("./src/main/java/images/atras.png");
+		try {
+			FileInputStream fis = new FileInputStream(imgFile);
+			try {
+				byte[] imageBytes = new byte[(int) imgFile.length()];
+				int bytesRead = fis.read(imageBytes);
+				if (imgFile.length() != bytesRead) {
+					System.err.println("Error transofrming file");
+					return;
+				} else {
+					PreparedStatement ps = con.prepareStatement(
+							//Cambia la sentencia para cada objeto
+							"INSERT INTO ITEMS (name, type, value, damage, image) values ('aaa','2222', 33, 2, ? )");
+					ps.setBytes(1, imageBytes);
+					int rs = ps.executeUpdate();
+					System.out.println(rs);
+					ps.close();
+				}
+			} catch (Exception e) {
+				System.err.println(e);
+			} finally {
+				fis.close();
+				con.close();
+			}
+		} catch (Exception e) {
+			System.err.println(e);
 		}
-		
-		sta.close();
-		conn.close();
-
-		System.out.println("Insert into USERS (nick, email, password, dateBirth, coins)"
-				+ " values ( 'joseR', 'jose@gmail.com','1234', '01/01/2000', 77);");
 
 	}
 

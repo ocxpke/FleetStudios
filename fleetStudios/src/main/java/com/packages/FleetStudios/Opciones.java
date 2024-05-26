@@ -28,7 +28,7 @@ public class Opciones extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private boolean play = true, noti = true, chatBool = true, politics = true;
-	
+
 	private final JPanel panel = new JPanel();
 
 	/**
@@ -39,7 +39,7 @@ public class Opciones extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Opciones frame = new Opciones(c);
+					Opciones frame = new Opciones(c, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,7 +51,7 @@ public class Opciones extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Opciones(Clip musicTheme) {
+	public Opciones(Clip musicTheme, String name) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
@@ -150,15 +150,13 @@ public class Opciones extends JFrame {
 						AudioInputStream audStream = AudioSystem.getAudioInputStream(new File(ruta));
 						musicTheme.open(audStream);
 						musicTheme.loop(Clip.LOOP_CONTINUOUSLY);
-						
-						FloatControl gainControl = 
-							    (FloatControl) musicTheme.getControl(FloatControl.Type.MASTER_GAIN);
-							gainControl.setValue(-15.0f);
-						
+
+						FloatControl gainControl = (FloatControl) musicTheme.getControl(FloatControl.Type.MASTER_GAIN);
+						gainControl.setValue(-15.0f);
+
 						musicTheme.start();
 					} catch (Exception e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+						System.err.println(e1);
 					}
 					play = true;
 				}
@@ -178,7 +176,7 @@ public class Opciones extends JFrame {
 		soporte.setBounds(629, 183, 130, 40);
 		soporte.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Soporte newFrame = new Soporte(musicTheme);
+				Soporte newFrame = new Soporte(musicTheme, name);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -191,7 +189,7 @@ public class Opciones extends JFrame {
 		Atras.setBounds(473, 507, 150, 50);
 		Atras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Continuar newFrame = new Continuar(musicTheme);
+				Continuar newFrame = new Continuar(musicTheme, name);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -202,7 +200,6 @@ public class Opciones extends JFrame {
 		fondo.setIcon(new ImageIcon(Opciones.class.getResource("/images/ajustes.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
-		
-		
+
 	}
 }

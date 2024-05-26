@@ -32,7 +32,7 @@ public class Continuar extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Continuar frame = new Continuar(c);
+					Continuar frame = new Continuar(c, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +44,7 @@ public class Continuar extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Continuar(Clip musicTheme) {
+	public Continuar(Clip musicTheme, String name) {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
@@ -61,24 +61,25 @@ public class Continuar extends JFrame {
 		unJugador.setBounds(333, 201, 435, 60);
 		unJugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				UnJugador newFrame = new UnJugador(musicTheme);
-				newFrame.setVisible(true);
-				dispose();
+				
 			}
 		});
 		
-		JLabel nomUsu = new JLabel("joseR");
-		nomUsu.setForeground(new Color(0, 0, 255));
-		nomUsu.setFont(new Font("Monocraft", Font.PLAIN, 20));
+		JLabel nomUsu = new JLabel("");
+		nomUsu.setText(name);
+		nomUsu.setForeground(Color.BLACK);
+		nomUsu.setFont(new Font("Dialog", Font.BOLD, 20));
 		nomUsu.setHorizontalAlignment(SwingConstants.RIGHT);
 		nomUsu.setBounds(899, 642, 121, 30);
 		contentPane.add(nomUsu);
 		
 		JLabel fondoNom = new JLabel("");
+		fondoNom.setIcon(new ImageIcon(Continuar.class.getResource("/images/fondoNomUsu.png")));
 		fondoNom.setBounds(820, 632, 200, 50);
 		contentPane.add(fondoNom);
 		
 		JLabel icoUsu = new JLabel("");
+		icoUsu.setIcon(new ImageIcon(Continuar.class.getResource("/images/imgUsu.png")));
 		icoUsu.setBounds(1030, 632, 50, 50);
 		contentPane.add(icoUsu);
 		contentPane.add(unJugador);
@@ -89,9 +90,7 @@ public class Continuar extends JFrame {
 		multijugador.setBounds(333, 284, 435, 60);
 		multijugador.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MultiJugador newFrame = new MultiJugador(musicTheme);
-				newFrame.setVisible(true);
-				dispose();
+				
 			}
 		});
 		contentPane.add(multijugador);
@@ -100,9 +99,10 @@ public class Continuar extends JFrame {
 		tienda.setIcon(new ImageIcon(Continuar.class.getResource("/images/Tienda.png")));
 		tienda.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tienda newFrame = new Tienda();
+				Tienda newFrame = new Tienda(musicTheme, name);
 				newFrame.setVisible(true);
 				dispose();
+				
 			}
 		});
 		tienda.setFont(new Font("Arial Black", Font.PLAIN, 20));
@@ -113,7 +113,7 @@ public class Continuar extends JFrame {
 		opciones.setIcon(new ImageIcon(Continuar.class.getResource("/images/opciones.png")));
 		opciones.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Opciones newFrame = new Opciones(musicTheme);
+				Opciones newFrame = new Opciones(musicTheme, name);
 				newFrame.setVisible(true);
 				dispose();
 			}
@@ -150,7 +150,7 @@ public class Continuar extends JFrame {
 		contentPane.add(inventario);
 		
 		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Continuar.class.getResource("/images/battle.png")));
+		fondo.setIcon(new ImageIcon(Continuar.class.getResource("/images/Sink & winAnimated.gif")));
 		fondo.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondo);
 	}
