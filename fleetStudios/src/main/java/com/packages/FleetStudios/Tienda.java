@@ -171,34 +171,30 @@ public class Tienda extends JFrame {
 		fondoNomItem1_1_1_1.setBounds(851, 123, 210, 40);
 		contentPane.add(fondoNomItem1_1_1_1);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Tienda.class.getResource("/images/img1.png")));
-		lblNewLabel.setBounds(34, 182, 215, 430);
-		contentPane.add(lblNewLabel);
+		JLabel imagen1 = new JLabel("");
+		imagen1.setIcon(new ImageIcon(Tienda.class.getResource("/images/img1.png")));
+		imagen1.setBounds(34, 182, 215, 430);
+		contentPane.add(imagen1);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(Tienda.class.getResource("/images/img3.png")));
-		lblNewLabel_1.setBounds(593, 183, 215, 430);
-		contentPane.add(lblNewLabel_1);
+		JLabel imagen3 = new JLabel("");
+		imagen3.setIcon(new ImageIcon(Tienda.class.getResource("/images/img3.png")));
+		imagen3.setBounds(593, 183, 215, 430);
+		contentPane.add(imagen3);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("");
-		lblNewLabel_1_1.setBounds(380, 138, 215, 430);
-		contentPane.add(lblNewLabel_1_1);
+		JLabel imagen2 = new JLabel("");
+		imagen2.setIcon(new ImageIcon(Tienda.class.getResource("/images/img2.png")));
+		imagen2.setBounds(325, 183, 215, 430);
+		contentPane.add(imagen2);
 		
-		JLabel lblNewLabel_1_2 = new JLabel("");
-		lblNewLabel_1_2.setIcon(new ImageIcon(Tienda.class.getResource("/images/img2.png")));
-		lblNewLabel_1_2.setBounds(325, 183, 215, 430);
-		contentPane.add(lblNewLabel_1_2);
+		JLabel imagen4 = new JLabel("");
+		imagen4.setIcon(new ImageIcon(Tienda.class.getResource("/images/img4.png")));
+		imagen4.setBounds(851, 182, 215, 430);
+		contentPane.add(imagen4);
 		
-		JLabel lblNewLabel_1_3 = new JLabel("");
-		lblNewLabel_1_3.setIcon(new ImageIcon(Tienda.class.getResource("/images/img4.png")));
-		lblNewLabel_1_3.setBounds(851, 182, 215, 430);
-		contentPane.add(lblNewLabel_1_3);
-		
-		JLabel lblNewLabel_2 = new JLabel("");
-		lblNewLabel_2.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTienda.png")));
-		lblNewLabel_2.setBounds(0, 0, 1100, 700);
-		contentPane.add(lblNewLabel_2);
+		JLabel fondoTienda = new JLabel("");
+		fondoTienda.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTienda.png")));
+		fondoTienda.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondoTienda);
 	
 	}
 		
