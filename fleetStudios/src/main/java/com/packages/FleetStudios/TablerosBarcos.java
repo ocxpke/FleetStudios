@@ -33,8 +33,8 @@ public class TablerosBarcos {
 					public void actionPerformed(ActionEvent e) {
 						tableroBut[x][y].btn.setBackground(Color.blue);
 						try {
-						b.loc[b.col][0] = x;
-						b.loc[b.col][1] = y;
+							b.loc[b.col][0] = x;
+							b.loc[b.col][1] = y;
 						}catch(Exception e1) {
 							System.err.println(e1);
 						}
