@@ -12,7 +12,7 @@ public class ConvertBlob {
 		Connection con = DatabaseCon.connect();
 		System.out.println("Comenzando...");
 		//Cambia la ruta para cada objeto
-		File imgFile = new File("./src/main/java/images/atras.png");
+		File imgFile = new File("./src/main/java/images/bomba.png");
 		try {
 			FileInputStream fis = new FileInputStream(imgFile);
 			try {
@@ -24,7 +24,7 @@ public class ConvertBlob {
 				} else {
 					PreparedStatement ps = con.prepareStatement(
 							//Cambia la sentencia para cada objeto
-							"INSERT INTO ITEMS (name, type, value, damage, image) values ('aaa','2222', 33, 2, ? )");
+							"INSERT INTO ITEMS (name, type, value, damage, image, desc) values ('Bomba','Artefacto', 5, 1, ? ,'')");
 					ps.setBytes(1, imageBytes);
 					int rs = ps.executeUpdate();
 					System.out.println(rs);
