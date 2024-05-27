@@ -46,8 +46,12 @@ public class TablerosBarcos {
 						if (b.col == 2) {
 							resetBtn();
 							System.out.println("re");
-
-							isValidShip(b);
+							
+							//CHECK THIS
+							if(!isValidShip(b)) {
+								b.col=0;
+								ship2();
+							}
 
 						}
 					}
