@@ -20,6 +20,7 @@ import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.ByteArrayInputStream;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import java.awt.Color;
@@ -30,6 +31,7 @@ public class Tienda extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
+	private int coins = 0;
 
 	/**
 	 * Launch the application.
@@ -49,33 +51,20 @@ public class Tienda extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @throws SQLException 
+	 * 
+	 * @throws SQLException
 	 */
-	public Tienda(Clip c, String name){
-		
+	public Tienda(Clip c, String name) {
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
 		setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-		//List<Objeto> listaRand = obtenerObjetosAleatorios();
-		
-		Connection con=DatabaseCon.connect(); //crear conexion con la base de datos
-		Statement sta =DatabaseCon.statement(con);
-		
-		ResultSet rs = DatabaseCon.getQuery(con, sta, "Select coins from USERS where nick='"+name+"'");
-		int coins=0;
-		try {
-			coins=rs.getInt("coins");
-		}catch(Exception e) {
-			System.err.println(e);
-		}
-		
-		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnAtras = new JButton("");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -84,185 +73,303 @@ public class Tienda extends JFrame {
 				dispose();
 			}
 		});
-		
+
+		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
+		Statement sta = DatabaseCon.statement(con);
+		ResultSet rs = DatabaseCon.getQuery(con, sta, "Select coins from USERS where nick='" + name + "'");
+		try {
+			coins = rs.getInt("coins");
+			rs.close();
+			sta.close();
+			con.close();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+
+		JLabel precioImg4 = new JLabel("");
+		precioImg4.setIcon(new ImageIcon(Tienda.class.getResource("/images/precio.gif")));
+		precioImg4.setBounds(871, 561, 110, 40);
+		contentPane.add(precioImg4);
+
+		JLabel precioImg3 = new JLabel("");
+		precioImg3.setIcon(new ImageIcon(Tienda.class.getResource("/images/precio.gif")));
+		precioImg3.setBounds(606, 561, 110, 40);
+		contentPane.add(precioImg3);
+
+		JLabel precioImg2 = new JLabel("");
+		precioImg2.setIcon(new ImageIcon(Tienda.class.getResource("/images/precio.gif")));
+		precioImg2.setBounds(330, 561, 110, 40);
+		contentPane.add(precioImg2);
+
+		JLabel precioImg = new JLabel("");
+		precioImg.setIcon(new ImageIcon(Tienda.class.getResource("/images/precio.gif")));
+		precioImg.setBounds(41, 561, 110, 40);
+		contentPane.add(precioImg);
+
+		JLabel precio4 = new JLabel("");
+		precio4.setFont(new Font("Monocraft", Font.BOLD, 15));
+		precio4.setBounds(991, 561, 60, 40);
+		contentPane.add(precio4);
+
+		JLabel precio3 = new JLabel("");
+		precio3.setFont(new Font("Monocraft", Font.BOLD, 15));
+		precio3.setBounds(726, 561, 60, 40);
+		contentPane.add(precio3);
+
+		JLabel precio2 = new JLabel("");
+		precio2.setFont(new Font("Monocraft", Font.BOLD, 15));
+		precio2.setBounds(450, 561, 60, 40);
+		contentPane.add(precio2);
+
+		JLabel precio1 = new JLabel("");
+		precio1.setFont(new Font("Monocraft", Font.BOLD, 15));
+		precio1.setBounds(161, 561, 60, 40);
+		contentPane.add(precio1);
+
+		JLabel desc4 = new JLabel("");
+		desc4.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 14));
+		desc4.setBounds(875, 387, 169, 170);
+		contentPane.add(desc4);
+
+		JLabel desc3 = new JLabel("");
+		desc3.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 14));
+		desc3.setBounds(617, 387, 169, 170);
+		contentPane.add(desc3);
+
+		JLabel desc2 = new JLabel("");
+		desc2.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 14));
+		desc2.setBounds(348, 387, 169, 170);
+		contentPane.add(desc2);
+
+		JLabel imgItem4 = new JLabel("");
+		imgItem4.setBounds(875, 217, 169, 160);
+		contentPane.add(imgItem4);
+
+		JLabel imgItem3 = new JLabel("");
+		imgItem3.setBounds(617, 217, 169, 160);
+		contentPane.add(imgItem3);
+
+		JLabel imgItem2 = new JLabel("");
+		imgItem2.setBounds(348, 217, 169, 160);
+		contentPane.add(imgItem2);
+
+		JLabel desc1 = new JLabel("");
+		desc1.setFont(new Font("Monocraft", Font.BOLD | Font.ITALIC, 14));
+		desc1.setBounds(57, 387, 169, 170);
+		contentPane.add(desc1);
+
+		JLabel imgItem1 = new JLabel("");
+		imgItem1.setBounds(56, 217, 169, 160);
+		contentPane.add(imgItem1);
+
 		JLabel nomItem4 = new JLabel("");
 		nomItem4.setHorizontalAlignment(SwingConstants.CENTER);
-		nomItem4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomItem4.setBounds(890, 123, 140, 40);
+		nomItem4.setFont(new Font("Monocraft", Font.BOLD, 17));
+		nomItem4.setBounds(851, 123, 200, 40);
 		contentPane.add(nomItem4);
-		
+
 		JLabel nomItem3 = new JLabel("");
 		nomItem3.setHorizontalAlignment(SwingConstants.CENTER);
-		nomItem3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomItem3.setBounds(639, 123, 140, 40);
+		nomItem3.setFont(new Font("Monocraft", Font.BOLD, 17));
+		nomItem3.setBounds(593, 123, 210, 40);
 		contentPane.add(nomItem3);
-		
+
 		JLabel nomItem2 = new JLabel("");
 		nomItem2.setHorizontalAlignment(SwingConstants.CENTER);
-		nomItem2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomItem2.setBounds(372, 123, 140, 40);
+		nomItem2.setFont(new Font("Monocraft", Font.BOLD, 17));
+		nomItem2.setBounds(330, 123, 210, 40);
 		contentPane.add(nomItem2);
-		
+
 		JLabel nomItem1 = new JLabel("");
 		nomItem1.setHorizontalAlignment(SwingConstants.CENTER);
-		nomItem1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		nomItem1.setBounds(79, 123, 140, 40);
+		nomItem1.setFont(new Font("Monocraft", Font.BOLD, 17));
+		nomItem1.setBounds(39, 123, 210, 40);
 		contentPane.add(nomItem1);
-		
+
 		JButton ntmCompra1 = new JButton("");
 		ntmCompra1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra1.setBounds(34, 622, 215, 40);
 		contentPane.add(ntmCompra1);
-		
+
 		JLabel coinsMostrar = new JLabel("");
 		coinsMostrar.setForeground(Color.WHITE);
 		coinsMostrar.setHorizontalAlignment(SwingConstants.RIGHT);
 		coinsMostrar.setFont(new Font("Tahoma", Font.BOLD, 25));
 		coinsMostrar.setBounds(912, 35, 74, 40);
-		coinsMostrar.setText(coins+"");
+		coinsMostrar.setText(coins + "");
 		contentPane.add(coinsMostrar);
-		
+
 		JLabel monedasImg = new JLabel("");
 		monedasImg.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoCoins.gif")));
 		monedasImg.setBounds(906, 35, 110, 40);
 		contentPane.add(monedasImg);
-		
+
 		btnAtras.setIcon(new ImageIcon(Tienda.class.getResource("/images/home.png")));
 		btnAtras.setBounds(1026, 22, 60, 60);
 		contentPane.add(btnAtras);
-		
+
 		JLabel imgTienda = new JLabel("");
 		imgTienda.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTiendaNom.png")));
 		imgTienda.setBounds(430, 22, 200, 60);
 		contentPane.add(imgTienda);
-		
+
 		JButton ntmCompra2 = new JButton("");
 		ntmCompra2.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra2.setBounds(325, 622, 215, 40);
 		contentPane.add(ntmCompra2);
-		
+
 		JButton ntmCompra3 = new JButton("");
 		ntmCompra3.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra3.setBounds(593, 622, 215, 40);
 		contentPane.add(ntmCompra3);
-		
+
 		JButton ntmCompra4 = new JButton("");
 		ntmCompra4.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra4.setBounds(851, 622, 215, 40);
 		contentPane.add(ntmCompra4);
-		
+
 		JLabel fondoNomItem1 = new JLabel("");
 		fondoNomItem1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoNomItem.png")));
 		fondoNomItem1.setBounds(39, 123, 210, 40);
 		contentPane.add(fondoNomItem1);
-		
+
 		JLabel fondoNomItem1_1 = new JLabel("");
 		fondoNomItem1_1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoNomItem.png")));
 		fondoNomItem1_1.setBounds(330, 123, 210, 40);
 		contentPane.add(fondoNomItem1_1);
-		
+
 		JLabel fondoNomItem1_1_1 = new JLabel("");
 		fondoNomItem1_1_1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoNomItem.png")));
 		fondoNomItem1_1_1.setBounds(593, 123, 210, 40);
 		contentPane.add(fondoNomItem1_1_1);
-		
+
 		JLabel fondoNomItem1_1_1_1 = new JLabel("");
 		fondoNomItem1_1_1_1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoNomItem.png")));
 		fondoNomItem1_1_1_1.setBounds(851, 123, 210, 40);
 		contentPane.add(fondoNomItem1_1_1_1);
-		
 
 		JLabel imagen1 = new JLabel("");
 		imagen1.setIcon(new ImageIcon(Tienda.class.getResource("/images/img1.png")));
 		imagen1.setBounds(34, 182, 215, 430);
 		contentPane.add(imagen1);
-		
+
 		JLabel imagen3 = new JLabel("");
 		imagen3.setIcon(new ImageIcon(Tienda.class.getResource("/images/img3.png")));
 		imagen3.setBounds(593, 183, 215, 430);
 		contentPane.add(imagen3);
-		
+
 		JLabel imagen2 = new JLabel("");
 		imagen2.setIcon(new ImageIcon(Tienda.class.getResource("/images/img2.png")));
 		imagen2.setBounds(325, 183, 215, 430);
 		contentPane.add(imagen2);
-		
+
 		JLabel imagen4 = new JLabel("");
 		imagen4.setIcon(new ImageIcon(Tienda.class.getResource("/images/img4.png")));
 		imagen4.setBounds(851, 182, 215, 430);
 		contentPane.add(imagen4);
-		
+
 		JLabel fondoTienda = new JLabel("");
 		fondoTienda.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTienda.png")));
 		fondoTienda.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondoTienda);
-	
-	}
-		
-	public void cargarTienda() {
-			contentPane.removeAll(); //borro todo lo que haya
-			List<Objeto> objetos = obtenerObjetosAleatorios(); 
-			
-			//Cargar las Imagenes, boton comprar y los label en un bucle
-			
-			contentPane.revalidate(); //actualiza estructura del panel
-			contentPane.repaint(); // redibuja el panel para reflejar los cambios nuevos
-	}
-	
-	
-	private List<Objeto> obtenerObjetosAleatorios(){
-		List<Objeto> objetos = new ArrayList<>(); //lista de objetos
-		
-		Connection con=DatabaseCon.connect(); //crear conexion con la base de datos
-		Statement sta =DatabaseCon.statement(con);
-		ResultSet rs = DatabaseCon.getQuery(con, sta, "");
-		
-		/*
-		 * Recorre la base de datos guarda todo en el objeto "objetos" 	
-		*/
+
+		List<Objeto> listaRand = obtenerObjetosAleatorios();
+		nomItem1.setText(listaRand.get(0).nombre);
+		nomItem2.setText(listaRand.get(1).nombre);
+		nomItem3.setText(listaRand.get(2).nombre);
+		nomItem4.setText(listaRand.get(3).nombre);
+
+		desc1.setText("<html>" + listaRand.get(0).desc + "<html>");
+		desc2.setText("<html>" + listaRand.get(1).desc + "<html>");
+		desc3.setText("<html>" + listaRand.get(2).desc + "<html>");
+		desc4.setText("<html>" + listaRand.get(3).desc + "<html>");
+
+		precio1.setText(listaRand.get(0).amount + "");
+		precio2.setText(listaRand.get(1).amount + "");
+		precio3.setText(listaRand.get(2).amount + "");
+		precio4.setText(listaRand.get(3).amount + "");
+
 		try {
-			while(rs.next()) {
-				Objeto obj = new Objeto(
-						rs.getString("Name"),
-						rs.getString("Description"),
-						rs.getInt("value")
-						);
+			ImageIcon imageIcon1 = new ImageIcon(listaRand.get(0).imgB);
+			imgItem1.setIcon(imageIcon1);
+
+			ImageIcon imageIcon2 = new ImageIcon(listaRand.get(1).imgB);
+			imgItem2.setIcon(imageIcon2);
+
+			ImageIcon imageIcon3 = new ImageIcon(listaRand.get(2).imgB);
+			imgItem3.setIcon(imageIcon3);
+
+			ImageIcon imageIcon4 = new ImageIcon(listaRand.get(3).imgB);
+			imgItem4.setIcon(imageIcon4);
+
+		} catch (Exception e1) {
+			System.err.println(e1);
+		}
+
+	}
+
+	public void cargarTienda() {
+		contentPane.removeAll(); // borro todo lo que haya
+		List<Objeto> objetos = obtenerObjetosAleatorios();
+
+		// Cargar las Imagenes, boton comprar y los label en un bucle
+
+		contentPane.revalidate(); // actualiza estructura del panel
+		contentPane.repaint(); // redibuja el panel para reflejar los cambios nuevos
+	}
+
+	private List<Objeto> obtenerObjetosAleatorios() {
+		List<Objeto> objetos = new ArrayList<>(); // lista de objetos
+
+		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
+		Statement sta = DatabaseCon.statement(con);
+		ResultSet rs = DatabaseCon.getQuery(con, sta, "SELECT * FROM ITEMS");
+
+		/*
+		 * Recorre la base de datos guarda todo en el objeto "objetos"
+		 */
+		try {
+			while (rs.next()) {
+				Objeto obj = new Objeto(rs.getString("name"), rs.getString("desc"), rs.getInt("value"),
+						rs.getBytes("image"));
 				objetos.add(obj);
 			}
+			rs.close();
 			sta.close();
 			con.close();
 		} catch (SQLException e) {
 			System.err.println(e);
 		}
-		
-		Collections.shuffle(objetos);//mezclar todos los objetos
-		return objetos.subList(0, 3);//devuelvo una lista con los 4 primeros elementos que salgan
+
+		Collections.shuffle(objetos);// mezclar todos los objetos
+		return objetos.subList(0, 4);// devuelvo una lista con los 4 primeros elementos que salgan
 	}
-	
+
 	private void comprarObjeto(Objeto o) {
 		int monedas = 0;
-		
-		Connection con=DatabaseCon.connect(); //crear conexion con la base de datos
-		Statement sta =DatabaseCon.statement(con);
+
+		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
+		Statement sta = DatabaseCon.statement(con);
 		ResultSet rs = DatabaseCon.getQuery(con, sta, "");
-		
-		//Comprobamos si el numero de monedas dle jugador es mayor o igual a lo que cuesta el objeto
-		if(monedas >= o.getAmount()) { //corregir
-			// Ahora vamos a restar a las monedas que tenga el jugador lo que cuesta el objeto 
-			monedas = (monedas - o.getAmount()); //esto hay que corregirlo
-			//inventario.add(o); //añadimos al inventario el objeto comprado
-			//falta actualizar la vision del boton de las monedas del jugador
-			actualizarJugador(); //actualizamos monedaas e inventario del jugador
-		}else {
-			JOptionPane.showMessageDialog(this, "No tienes suficientes monedas", "Error", JOptionPane.ERROR_MESSAGE);
-		}
+
+		/*
+		 * // Comprobamos si el numero de monedas dle jugador es mayor o igual a lo que
+		 * // cuesta el objeto if (monedas >= o.getAmount()) { // corregir // Ahora
+		 * vamos a restar a las monedas que tenga el jugador lo que cuesta el // objeto
+		 * monedas = (monedas - o.getAmount()); // esto hay que corregirlo //
+		 * inventario.add(o); //añadimos al inventario el objeto comprado // falta
+		 * actualizar la vision del boton de las monedas del jugador
+		 * actualizarJugador(); // actualizamos monedaas e inventario del jugador } else
+		 * { JOptionPane.showMessageDialog(this, "No tienes suficientes monedas",
+		 * "Error", JOptionPane.ERROR_MESSAGE); }
+		 */
 	}
-	
+
 	public void actualizarJugador() {
-		
-		Connection con=DatabaseCon.connect(); //crear conexion con la base de datos
-		Statement sta =DatabaseCon.statement(con);
-		int mq = DatabaseCon.modifyQuery(con, sta, ""); //desde la base de datos actualizamos las cositas jiji @JOSE HAZ TU LABOR CHACHA
+
+		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
+		Statement sta = DatabaseCon.statement(con);
+		int mq = DatabaseCon.modifyQuery(con, sta, ""); // desde la base de datos actualizamos las cositas jiji @JOSE
+														// HAZ TU LABOR CHACHA
 	}
 }
-
