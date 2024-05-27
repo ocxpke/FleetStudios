@@ -69,10 +69,9 @@ public class Inventario extends JFrame {
 		});
 		contentPane.add(atrasInventario);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(Inventario.class.getResource("/images/fondoInventario.png")));
-		lblNewLabel.setBounds(0, 0, 1100, 700);
-		contentPane.add(lblNewLabel);
-		
+		JLabel fondoInventario = new JLabel("");
+		fondoInventario.setIcon(new ImageIcon(Inventario.class.getResource("/images/fondoInventario.png")));
+		fondoInventario.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondoInventario);
 	}
 }

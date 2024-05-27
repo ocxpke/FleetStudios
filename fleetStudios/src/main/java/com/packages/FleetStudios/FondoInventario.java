@@ -42,10 +42,10 @@ public class FondoInventario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon(FondoInventario.class.getResource("/images/fondoFondoInventario.png")));
-		lblNewLabel.setBounds(0, 0, 1100, 700);
-		contentPane.add(lblNewLabel);
+		JLabel fondoFondoInventario = new JLabel("");
+		fondoFondoInventario.setIcon(new ImageIcon(FondoInventario.class.getResource("/images/fondoFondoInventario.png")));
+		fondoFondoInventario.setBounds(0, 0, 1100, 700);
+		contentPane.add(fondoFondoInventario);
 	}
 
 }
