@@ -171,6 +171,7 @@ public class Tienda extends JFrame {
 		fondoNomItem1_1_1_1.setBounds(851, 123, 210, 40);
 		contentPane.add(fondoNomItem1_1_1_1);
 		
+
 		JLabel imagen1 = new JLabel("");
 		imagen1.setIcon(new ImageIcon(Tienda.class.getResource("/images/img1.png")));
 		imagen1.setBounds(34, 182, 215, 430);
