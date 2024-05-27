@@ -41,6 +41,7 @@ public class Tablero extends JFrame {
 	 * Create the frame.
 	 */
 	public Tablero() {
+		boolean waitt=true;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1100, 700);
 		contentPane = new JPanel();
@@ -58,7 +59,8 @@ public class Tablero extends JFrame {
 		 */
 
 		tb1.ship2();
-
+		
+		
 	}
 
 	private void createBoard(JPanel panel, int startX, int startY, int buttonWidth, int buttonHeight,

@@ -181,10 +181,6 @@ public class Tienda extends JFrame {
 		lblNewLabel_1.setBounds(593, 183, 215, 430);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("");
-		lblNewLabel_1_1.setBounds(380, 138, 215, 430);
-		contentPane.add(lblNewLabel_1_1);
-		
 		JLabel lblNewLabel_1_2 = new JLabel("");
 		lblNewLabel_1_2.setIcon(new ImageIcon(Tienda.class.getResource("/images/img2.png")));
 		lblNewLabel_1_2.setBounds(325, 183, 215, 430);
