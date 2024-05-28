@@ -31,8 +31,8 @@ public class Tienda extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textField;
-	private int coins = 0;
-
+	private static int coins = 0;
+	private Inventario2 inventario = new Inventario2();
 	/**
 	 * Launch the application.
 	 */
@@ -55,6 +55,9 @@ public class Tienda extends JFrame {
 	 * @throws SQLException
 	 */
 	public Tienda(Clip c, String name) {
+		
+		
+		List<Objeto> listaRand = obtenerObjetosAleatorios();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1115, 740);
@@ -186,16 +189,12 @@ public class Tienda extends JFrame {
 		nomItem1.setBounds(39, 123, 210, 40);
 		contentPane.add(nomItem1);
 
-		JButton ntmCompra1 = new JButton("");
-		ntmCompra1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
-		ntmCompra1.setBounds(34, 622, 215, 40);
-		contentPane.add(ntmCompra1);
 
 		JLabel coinsMostrar = new JLabel("");
 		coinsMostrar.setForeground(Color.WHITE);
 		coinsMostrar.setHorizontalAlignment(SwingConstants.RIGHT);
 		coinsMostrar.setFont(new Font("Tahoma", Font.BOLD, 25));
-		coinsMostrar.setBounds(912, 35, 74, 40);
+		coinsMostrar.setBounds(912, 35, 71, 40);
 		coinsMostrar.setText(coins + "");
 		contentPane.add(coinsMostrar);
 
@@ -212,20 +211,45 @@ public class Tienda extends JFrame {
 		imgTienda.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTiendaNom.png")));
 		imgTienda.setBounds(430, 22, 200, 60);
 		contentPane.add(imgTienda);
+		
+		JButton ntmCompra1 = new JButton("");
+		ntmCompra1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
+		ntmCompra1.setBounds(34, 622, 215, 40);
+		ntmCompra1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comprarObjeto(listaRand.get(0), name, coinsMostrar);
+			}
+		});
+		contentPane.add(ntmCompra1);
 
 		JButton ntmCompra2 = new JButton("");
 		ntmCompra2.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra2.setBounds(325, 622, 215, 40);
+		ntmCompra2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comprarObjeto(listaRand.get(1), name, coinsMostrar);
+			}
+		});
 		contentPane.add(ntmCompra2);
 
 		JButton ntmCompra3 = new JButton("");
 		ntmCompra3.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra3.setBounds(593, 622, 215, 40);
+		ntmCompra3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comprarObjeto(listaRand.get(2), name, coinsMostrar);
+			}
+		});
 		contentPane.add(ntmCompra3);
 
 		JButton ntmCompra4 = new JButton("");
 		ntmCompra4.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra4.setBounds(851, 622, 215, 40);
+		ntmCompra4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				comprarObjeto(listaRand.get(3), name, coinsMostrar);
+			}
+		});
 		contentPane.add(ntmCompra4);
 
 		JLabel fondoNomItem1 = new JLabel("");
@@ -273,7 +297,7 @@ public class Tienda extends JFrame {
 		fondoTienda.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondoTienda);
 
-		List<Objeto> listaRand = obtenerObjetosAleatorios();
+		
 		nomItem1.setText(listaRand.get(0).nombre);
 		nomItem2.setText(listaRand.get(1).nombre);
 		nomItem3.setText(listaRand.get(2).nombre);
@@ -318,7 +342,7 @@ public class Tienda extends JFrame {
 		contentPane.repaint(); // redibuja el panel para reflejar los cambios nuevos
 	}
 
-	private List<Objeto> obtenerObjetosAleatorios() {
+	public List<Objeto> obtenerObjetosAleatorios() {
 		List<Objeto> objetos = new ArrayList<>(); // lista de objetos
 
 		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
@@ -345,31 +369,31 @@ public class Tienda extends JFrame {
 		return objetos.subList(0, 4);// devuelvo una lista con los 4 primeros elementos que salgan
 	}
 
-	private void comprarObjeto(Objeto o) {
-		int monedas = 0;
-
-		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
-		Statement sta = DatabaseCon.statement(con);
-		ResultSet rs = DatabaseCon.getQuery(con, sta, "");
-
-		/*
-		 * // Comprobamos si el numero de monedas dle jugador es mayor o igual a lo que
-		 * // cuesta el objeto if (monedas >= o.getAmount()) { // corregir // Ahora
-		 * vamos a restar a las monedas que tenga el jugador lo que cuesta el // objeto
-		 * monedas = (monedas - o.getAmount()); // esto hay que corregirlo //
-		 * inventario.add(o); //añadimos al inventario el objeto comprado // falta
-		 * actualizar la vision del boton de las monedas del jugador
-		 * actualizarJugador(); // actualizamos monedaas e inventario del jugador } else
-		 * { JOptionPane.showMessageDialog(this, "No tienes suficientes monedas",
-		 * "Error", JOptionPane.ERROR_MESSAGE); }
-		 */
+	public void comprarObjeto(Objeto o, String name, JLabel coinsMostrar) {
+		if(Tienda.coins >= o.amount) {
+			Tienda.coins -= o.amount;
+			coinsMostrar.setText(Tienda.coins + "");
+			inventario.añadirObjeto(o);
+			actualizarJugador(name, Tienda.coins);
+			System.out.println("¡Objeto comprado con éxito!");
+			JOptionPane.showMessageDialog(null, "Objeto comprado con éxito!");
+			
+		}else {
+			System.out.println("Error en la compra del objeto");
+			JOptionPane.showMessageDialog(null, "No tienes suficientes monedas para comprar este objeto");
+		}
 	}
 
-	public void actualizarJugador() {
+	public void actualizarJugador(String name, int coins) {
 
 		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
 		Statement sta = DatabaseCon.statement(con);
-		int mq = DatabaseCon.modifyQuery(con, sta, ""); // desde la base de datos actualizamos las cositas jiji @JOSE
-														// HAZ TU LABOR CHACHA
+		int mq = DatabaseCon.modifyQuery(con, sta, "Update USERS set coins = " + coins + " WHERE nick = '" + name + "'"); // desde la base de datos actualizamos las cositas jiji @JOSE
+		try {
+			sta.close();
+			con.close();
+		}catch(SQLException e) {
+			System.err.println(e);
+		}
 	}
 }
