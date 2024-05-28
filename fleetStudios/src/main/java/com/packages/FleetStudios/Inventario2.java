@@ -3,12 +3,17 @@ package com.packages.FleetStudios;
 import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class Inventario2 extends JFrame {
 
@@ -37,30 +42,23 @@ public class Inventario2 extends JFrame {
 	public Inventario2() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(250, 50, 1100, 700);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(0, 0, 1100, 700);
+		
+		
+		JScrollPane scrollPane = new JScrollPane(textArea);
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(0, 0, 1090, 665);
+		contentPane.add(scrollPane);
 	}
 	
-	public void añadirObjeto(Objeto o) {
-		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
-        Statement sta = DatabaseCon.statement(con);
-        String query = "INSERT INTO INVENTORY_ITEMS (userId,itemId, value) " +
-                "VALUES ('" + o.nombre + "', '" + o.desc + "', " + o.amount + ", ?)";
-        
-        try {
-        	PreparedStatement ps = con.prepareStatement(query);
-        	ps.setBytes(1, o.imgB);
-        	ps.executeUpdate();
-        	ps.close();
-        	sta.close();
-        	con.close();
-        	System.out.println("Objeto añadido al inventario");
-        }catch(SQLException e) {
-        	System.err.println("Error al añadir objeto al inventario: " + e.getMessage());
-        }
-	}
-
+	
 }
