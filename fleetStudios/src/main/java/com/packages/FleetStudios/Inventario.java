@@ -50,7 +50,7 @@ public class Inventario extends JFrame {
 		abrirInventario.setBounds(216, 99, 200, 60);
 		abrirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				FondoInventario newframe = new FondoInventario();
+				Inventario2 newframe = new Inventario2();
 				newframe.setVisible(true);
 				dispose();
 			}
