@@ -40,7 +40,7 @@ public class Inventario2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Inventario2 frame = new Inventario2(null, "joseR");
+					Inventario2 frame = new Inventario2(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

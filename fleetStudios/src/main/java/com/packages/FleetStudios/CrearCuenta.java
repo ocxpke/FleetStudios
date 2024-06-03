@@ -24,10 +24,10 @@ import javax.swing.ImageIcon;
 public class CrearCuenta extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField nick;
-	private JTextField email;
-	private JTextField fecNac;
-	private JTextField contra;
+	protected JTextField nick;
+	protected JTextField email;
+	protected JTextField fecNac;
+	protected JTextField contra;
 
 	/**
 	 * Launch the application.
@@ -154,5 +154,22 @@ public class CrearCuenta extends JFrame {
 		fondo.setIcon(new ImageIcon(CrearCuenta.class.getResource("/images/fondoCreaTuCuenta.png")));
 		fondo.setBounds(0, 0, 1100, 700);
 		getContentPane().add(fondo);
+	}
+
+	public String isSomethingNull() {
+		String ret = "";
+
+		if (nick.getText().isBlank()) {
+			ret = "El campo nick no puede estar vacío";
+		} else if (contra.getText().isBlank()) {
+			ret = "El campo contraseña no puede estar vacío";
+		} else if (fecNac.getText().isBlank()) {
+			ret = "La fecha de nacimiento no puede estar vacía";
+		} else if (email.getText().isBlank()) {
+			ret = "El campo correo electrónico no puede estar vacío";
+		}
+
+		return ret;
+
 	}
 }

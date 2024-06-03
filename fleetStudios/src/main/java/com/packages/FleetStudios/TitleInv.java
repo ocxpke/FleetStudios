@@ -10,14 +10,14 @@ import javax.swing.SwingConstants;
 public class TitleInv extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-
+	public JLabel titulo;
 	/**
 	 * Create the panel.
 	 */
 	public TitleInv(String nombre) {
 		setLayout(null);
 		
-		JLabel titulo = new JLabel("");
+		titulo = new JLabel("");
 		titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		titulo.setForeground(new Color(127, 255, 0));
 		titulo.setFont(new Font("Monocraft", Font.BOLD, 27));
