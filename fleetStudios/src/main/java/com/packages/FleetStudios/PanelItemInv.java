@@ -13,6 +13,9 @@ import javax.swing.ImageIcon;
 public class PanelItemInv extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	public TitleInv titulo;
+	public ContInv cont;
+	public BottInv bttInv;
 
 	/**
 	 * Create the panel.
@@ -20,15 +23,15 @@ public class PanelItemInv extends JPanel {
 	public PanelItemInv(String nomI, ImageIcon img, String desc, int amount) {
 		setLayout(new BorderLayout(0, 0));
 
-		TitleInv titulo = new TitleInv(nomI);
+		titulo = new TitleInv(nomI);
 		titulo.setPreferredSize(new Dimension(360, 100));
 		add(titulo, BorderLayout.NORTH);
 
-		ContInv cont = new ContInv(img, desc);
+		cont = new ContInv(img, desc);
 		cont.setPreferredSize(new Dimension(360, 500));
 		add(cont, BorderLayout.CENTER);
 
-		BottInv bttInv = new BottInv(amount);
+		bttInv = new BottInv(amount);
 		bttInv.setPreferredSize(new Dimension(360, 100));
 		add(bttInv, BorderLayout.SOUTH);
 

@@ -22,7 +22,7 @@ public class PrimeraCapa extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	public Clip musicTheme;
 	/**
 	 * Launch the application.
 	 * 
@@ -52,7 +52,7 @@ public class PrimeraCapa extends JFrame {
 
 		String ruta = "./src/main/java/images/musicaJuego.wav";
 		AudioInputStream audStream = AudioSystem.getAudioInputStream(new File(ruta));
-		Clip musicTheme = AudioSystem.getClip();
+		musicTheme = AudioSystem.getClip();
 		musicTheme.open(audStream);
 		musicTheme.loop(Clip.LOOP_CONTINUOUSLY);
 		

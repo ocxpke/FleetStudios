@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 public class ContInv extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	public JLabel desc;
+	public JLabel img;
 
 	/**
 	 * Create the panel.
@@ -15,12 +17,12 @@ public class ContInv extends JPanel {
 	public ContInv(ImageIcon imgIt, String descIt) {
 		setLayout(null);
 
-		JLabel img = new JLabel("");
+		img = new JLabel("");
 		img.setBounds(89, 52, 169, 160);
 		img.setIcon(imgIt);
 		add(img);
 
-		JLabel desc = new JLabel("");
+		desc = new JLabel("");
 		desc.setFont(new Font("Monocraft", Font.BOLD, 20));
 		desc.setBounds(10, 251, 340, 238);
 		desc.setText("<html>" + descIt + "<html>");

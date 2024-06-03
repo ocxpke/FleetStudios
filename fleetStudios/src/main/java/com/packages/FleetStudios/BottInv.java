@@ -10,14 +10,14 @@ import java.awt.Color;
 public class BottInv extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-
+	public JLabel amount;
 	/**
 	 * Create the panel.
 	 */
 	public BottInv(int amnt) {
 		setLayout(null);
 
-		JLabel amount = new JLabel("");
+		amount = new JLabel("");
 		amount.setForeground(new Color(50, 205, 50));
 		amount.setHorizontalAlignment(SwingConstants.CENTER);
 		amount.setFont(new Font("Monocraft", Font.BOLD, 33));
