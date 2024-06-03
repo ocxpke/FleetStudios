@@ -85,6 +85,10 @@ public class IniciarSesion extends JFrame {
 				try {
 					Connection con = DatabaseCon.connect();
 					Statement sta = DatabaseCon.statement(con);
+					String mensajeError = getDatosLogin(email.getText(),contrasena.getText());
+					if(mensajeError == null) {
+						mensajeError = "Datos erroneos por favor compruebe el email y la contraseña";
+					}
 					ResultSet rs = DatabaseCon.getQuery(con, sta, "Select * from USERS where '" + email.getText()
 							+ "'=email and password='" + contrasena.getText() + "';");
 					String name = null;
@@ -93,9 +97,9 @@ public class IniciarSesion extends JFrame {
 					}catch(Exception err) {
 						System.err.println(err);
 					}
-					if (!rs.next() || email.getText().isBlank()) {
+					if (!rs.next() || email.getText().isBlank() || contrasena.getText().isBlank()) {
 						JOptionPane.showMessageDialog(null,
-								"Datos erroneos por favor compruebe el email y la contraseña", "ERROR",
+								mensajeError, "ERROR",
 								JOptionPane.ERROR_MESSAGE);
 					} else {
 						Continuar newFrame = new Continuar(musicTheme, name);
@@ -161,23 +165,19 @@ public class IniciarSesion extends JFrame {
 		contrasena.setText(null);
 	}
 
-	public String[] getDatosLogin() {
-		String textEmail = email.getText();
-		String textContrasena = contrasena.getText();
+	public String getDatosLogin(String textEmail, String textContrasena) {
+		//String textEmail = email.getText();
+		//String textContrasena = contrasena.getText();
 
 		if (textEmail.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "El campo correo electronico no puede estar vacio", "Iniciar Sesion",
-					JOptionPane.ERROR_MESSAGE);
-			return null;
+			return "El campo correo electronico no puede estar vacio";
 		}
 
 		if (textContrasena.isEmpty()) {
-			JOptionPane.showMessageDialog(null, "El campo ccontraseña no puede estar vacio", "Iniciar Sesion",
-					JOptionPane.ERROR_MESSAGE);
-			return null;
+			return "El campo contraseña no puede estar vacio";
 		}
 
-		return new String[] { textEmail, textContrasena };
+		return null;
 
 	}
 }
