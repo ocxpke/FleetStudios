@@ -40,7 +40,7 @@ public class Inventario2 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Inventario2 frame = new Inventario2(null, null);
+					Inventario2 frame = new Inventario2(null, "joseR");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -85,7 +85,7 @@ public class Inventario2 extends JFrame {
 			System.err.println(e);
 		}
 
-		panel.setLayout(new GridLayout((cnt/3), 3, 5, 5));
+		panel.setLayout(new GridLayout(1, cnt, 5, 5));
 
 		rs = DatabaseCon.getQuery(con, sta,
 				"SELECT I.NAME, I.IMAGE, I.DESC, II.AMOUNT FROM INVENTORY_ITEMS II JOIN ITEMS I ON I.itemId==II.itemId WHERE II.nick='"
@@ -111,7 +111,7 @@ public class Inventario2 extends JFrame {
 		panel.repaint();
 
 		JScrollPane scrollpane = new JScrollPane(panel);
-		scrollpane.setBounds(0, 0, 1099, 720);
+		scrollpane.setBounds(0, 0, 1100, 720);
 		
 		contentPane.add(scrollpane);
 		

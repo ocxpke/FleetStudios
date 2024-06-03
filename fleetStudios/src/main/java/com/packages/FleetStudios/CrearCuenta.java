@@ -112,7 +112,7 @@ public class CrearCuenta extends JFrame {
 					Statement sta = DatabaseCon.statement(con);
 
 					int rs = DatabaseCon.modifyQuery(con, sta, "INSERT INTO USERS VALUES ('" + nick.getText() + "','"
-							+ email.getText() + "','" + contra.getText() + "','" + fecNac.getText() + "',5);");
+							+ email.getText() + "','" + contra.getText() + "','" + fecNac.getText() + "',5,0);");
 					if (rs == 0 || rs == -1 || nick.getText().isBlank() || email.getText().isBlank()) {
 						JOptionPane.showMessageDialog(null,
 								"Datos erroneos compruebe todos los campos y vuelva a intentarlo.", "ERROR",
