@@ -31,7 +31,6 @@ public class PrimeraCapa extends JFrame {
 	 * @throws LineUnavailableException
 	 */
 	public static void main(String[] args) {
-
 		EventQueue.invokeLater(new Runnable() {
 			Clip cNull = null;
 

@@ -5,13 +5,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.UIManager;
 
 public class TablerosBarcos {
 
 	final int LEN = 10;
 	protected int tableroNum[][];
 	protected BotonBarcos tableroBut[][];
-	protected Barco b;
+	protected Barco bs[] = new Barco[6];
+	// protected Barco b;
 
 	public TablerosBarcos() {
 		this.tableroNum = new int[LEN][LEN];
@@ -22,10 +24,11 @@ public class TablerosBarcos {
 				this.tableroNum[i][z] = 0;
 			}
 		}
+
 	}
 
-	public void ship2() {
-		b = new Barco(2);
+	public void ship2(int index, int lenB) {
+		bs[index] = new Barco(lenB);
 		for (int i = 0; i < tableroNum.length; i++) {
 			for (int z = 0; z < tableroNum[i].length; z++) {
 				int x = i;
@@ -35,22 +38,28 @@ public class TablerosBarcos {
 					public void actionPerformed(ActionEvent e) {
 						tableroBut[x][y].btn.setBackground(Color.blue);
 						try {
-							b.loc[b.col][0] = x;
-							b.loc[b.col][1] = y;
+							bs[index].loc[bs[index].col][0] = x;
+							bs[index].loc[bs[index].col][1] = y;
 						} catch (Exception e1) {
 							System.err.println(e1);
 						}
-						System.out.println(b.col);
-						b.col++;
+						bs[index].col++;
 
-						if (b.col == 2) {
+						if (bs[index].col == 2) {
 							resetBtn();
-							System.out.println("re");
-							
-							//CHECK THIS
-							if(!isValidShip(b)) {
-								b.col=0;
-								ship2();
+							boolean isSV = isValidShip(bs[index]);
+							// Here we rest wrong position
+							if (!isSV) {
+								//Arreglar posicion ya escogida
+								tableroBut[bs[index].loc[0][0]][bs[index].loc[0][1]].btn
+										.setBackground(UIManager.getColor("Button.background"));
+								tableroBut[bs[index].loc[1][0]][bs[index].loc[1][1]].btn
+										.setBackground(UIManager.getColor("Button.background"));
+								bs[index] = null;
+								ship2(index, lenB);
+							} else {
+								System.out.println(tableNumToString());
+								ship2(index + 1, lenB);
 							}
 
 						}
@@ -62,20 +71,23 @@ public class TablerosBarcos {
 
 	public boolean isValidShip(Barco b) {
 		boolean ret = true;
-		System.out.println(this.tableNumToString());
+		// System.out.println(this.tableNumToString());
 		Coordenadas c1 = new Coordenadas(b.loc[0][0], b.loc[0][1]);
 		Coordenadas c2 = new Coordenadas(b.loc[1][0], b.loc[1][1]);
 		if (tableroNum[c1.x][c1.y] == 1 || tableroNum[c2.x][c2.y] == 1) {
 			return false;
 		}
-		System.out.println(c1.toString());
-		System.out.println(c2.toString());
-		System.out.println(c1.posValid(c2));
+		
+		 System.out.println(c1.toString()); System.out.println(c2.toString());
+		 
+		// System.out.println(c1.posValid(c2));
 		if (c1.posValid(c2)) {
 			tableroNum[c1.x][c1.y] = 1;
 			tableroNum[c2.x][c2.y] = 1;
+		} else {
+			ret = false;
 		}
-		System.out.println(this.tableNumToString());
+		// System.out.println(this.tableNumToString());
 		return ret;
 	}
 

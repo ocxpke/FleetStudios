@@ -19,7 +19,7 @@ public class Coordenadas {
 	public boolean posValid(Coordenadas c2) {
 		boolean ret = false;
 
-		if (Math.abs((this.x - c2.x) + (this.y - c2.y)) == 1) {
+		if (Math.abs((this.x - c2.x)) + Math.abs((this.y - c2.y)) == 1) {
 			ret = true;
 		}
 

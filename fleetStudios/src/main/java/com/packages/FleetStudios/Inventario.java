@@ -12,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -21,12 +22,12 @@ public class Inventario extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Inventario frame = new Inventario();
+					Inventario frame = new Inventario(null, null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,7 +36,7 @@ public class Inventario extends JFrame {
 		});
 	}
 
-	public Inventario() {
+	public Inventario(Clip musicTheme, String nick) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(250, 50, 1100, 700);
 		setLocationRelativeTo(null);
@@ -44,31 +45,31 @@ public class Inventario extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton abrirInventario = new JButton("");
 		abrirInventario.setIcon(new ImageIcon(Inventario.class.getResource("/images/abrir inventario.png")));
 		abrirInventario.setBounds(216, 99, 200, 60);
 		abrirInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Inventario2 newframe = new Inventario2();
+				Inventario2 newframe = new Inventario2(musicTheme, nick);
 				newframe.setVisible(true);
 				dispose();
 			}
 		});
 		contentPane.add(abrirInventario);
-		
+
 		JButton atrasInventario = new JButton("");
 		atrasInventario.setIcon(new ImageIcon(Inventario.class.getResource("/images/atrasInventario.png")));
 		atrasInventario.setBounds(687, 99, 200, 60);
 		atrasInventario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Continuar newframe = new Continuar(null, null); //cambiar
+				Continuar newframe = new Continuar(musicTheme, nick); // cambiar
 				newframe.setVisible(true);
 				dispose();
 			}
 		});
 		contentPane.add(atrasInventario);
-		
+
 		JLabel fondoInventario = new JLabel("");
 		fondoInventario.setIcon(new ImageIcon(Inventario.class.getResource("/images/fondoInventario.png")));
 		fondoInventario.setBounds(0, 0, 1100, 700);

@@ -32,7 +32,7 @@ public class Tienda extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
 	private static int coins = 0;
-	private Inventario2 inventario = new Inventario2();
+
 	/**
 	 * Launch the application.
 	 */
@@ -55,8 +55,7 @@ public class Tienda extends JFrame {
 	 * @throws SQLException
 	 */
 	public Tienda(Clip c, String name) {
-		
-		
+
 		List<Objeto> listaRand = obtenerObjetosAleatorios();
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -189,7 +188,6 @@ public class Tienda extends JFrame {
 		nomItem1.setBounds(39, 123, 210, 40);
 		contentPane.add(nomItem1);
 
-
 		JLabel coinsMostrar = new JLabel("");
 		coinsMostrar.setForeground(Color.WHITE);
 		coinsMostrar.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -211,7 +209,7 @@ public class Tienda extends JFrame {
 		imgTienda.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoTiendaNom.png")));
 		imgTienda.setBounds(430, 22, 200, 60);
 		contentPane.add(imgTienda);
-		
+
 		JButton ntmCompra1 = new JButton("");
 		ntmCompra1.setIcon(new ImageIcon(Tienda.class.getResource("/images/fondoBtnComprar.gif")));
 		ntmCompra1.setBounds(34, 622, 215, 40);
@@ -297,7 +295,6 @@ public class Tienda extends JFrame {
 		fondoTienda.setBounds(0, 0, 1100, 700);
 		contentPane.add(fondoTienda);
 
-		
 		nomItem1.setText(listaRand.get(0).nombre);
 		nomItem2.setText(listaRand.get(1).nombre);
 		nomItem3.setText(listaRand.get(2).nombre);
@@ -354,7 +351,7 @@ public class Tienda extends JFrame {
 		 */
 		try {
 			while (rs.next()) {
-				Objeto obj = new Objeto(rs.getString("name"), rs.getString("desc"), rs.getInt("value"),
+				Objeto obj = new Objeto(rs.getInt(1), rs.getString("name"), rs.getString("desc"), rs.getInt("value"),
 						rs.getBytes("image"));
 				objetos.add(obj);
 			}
@@ -370,16 +367,14 @@ public class Tienda extends JFrame {
 	}
 
 	public void comprarObjeto(Objeto o, String name, JLabel coinsMostrar) {
-		if(Tienda.coins >= o.amount) {
+		if (Tienda.coins >= o.amount) {
 			Tienda.coins -= o.amount;
 			coinsMostrar.setText(Tienda.coins + "");
-			inventario.añadirObjeto(o);
+			actualizaInventario(o, name);
 			actualizarJugador(name, Tienda.coins);
-			System.out.println("¡Objeto comprado con éxito!");
 			JOptionPane.showMessageDialog(null, "Objeto comprado con éxito!");
-			
-		}else {
-			System.out.println("Error en la compra del objeto");
+
+		} else {
 			JOptionPane.showMessageDialog(null, "No tienes suficientes monedas para comprar este objeto");
 		}
 	}
@@ -388,11 +383,37 @@ public class Tienda extends JFrame {
 
 		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
 		Statement sta = DatabaseCon.statement(con);
-		int mq = DatabaseCon.modifyQuery(con, sta, "Update USERS set coins = " + coins + " WHERE nick = '" + name + "'"); // desde la base de datos actualizamos las cositas jiji @JOSE
+		int mq = DatabaseCon.modifyQuery(con, sta,
+				"Update USERS set coins = " + coins + " WHERE nick = '" + name + "'"); // desde la base de datos
+																						// actualizamos las cositas jij
+																						// @JOSE
 		try {
 			sta.close();
 			con.close();
-		}catch(SQLException e) {
+		} catch (SQLException e) {
+			System.err.println(e);
+		}
+	}
+
+	public void actualizaInventario(Objeto o, String name) {
+		Connection con = DatabaseCon.connect(); // crear conexion con la base de datos
+		Statement sta = DatabaseCon.statement(con);
+		try {
+			ResultSet rs = DatabaseCon.getQuery(con, sta,
+					"SELECT * from INVENTORY_ITEMS where nick='" + name + "' and itemId=" + o.id);
+			int ai;
+			if (!rs.next()) {
+				ai = DatabaseCon.modifyQuery(con, sta,
+						"INSERT INTO INVENTORY_ITEMS (nick, itemId, amount) values ('" + name + "'," + o.id + ",1)");
+			} else {
+				ai = DatabaseCon.modifyQuery(con, sta, "UPDATE INVENTORY_ITEMS SET amount=" + (rs.getInt("amount") + 1)
+						+ " where nick='" + name + "' and itemId=" + o.id);
+
+			}
+
+			sta.close();
+			con.close();
+		} catch (SQLException e) {
 			System.err.println(e);
 		}
 	}

@@ -58,7 +58,9 @@ public class Tablero extends JFrame {
 		 * colocar b t1 colocar b t2 jugar
 		 */
 
-		tb1.ship2();
+		tb1.ship2(0,2);
+		
+		
 		
 		
 	}
